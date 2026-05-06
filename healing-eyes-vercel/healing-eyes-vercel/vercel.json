@@ -1,11 +1,6 @@
 {
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/foundation", "destination": "/foundation-course" },
-    { "source": "/foundation-course", "destination": "/foundation-course" },
-    { "source": "/academy", "destination": "/academy" }
-  ],
   "headers": [
     {
       "source": "/assets/(.*)",
