@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Healing Eyes Academy — Iridology Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FBF6E9;
+  --cream-deep: #F5EBD6;
+  --ivory: #FEFAF1;
+  --navy: #1A2B5C;
+  --navy-deep: #0F1B3D;
+  --sage: #7BB99F;
+  --sage-deep: #5A9479;
+  --charcoal: #2A2A2A;
+  --gold: #B8935A;
+  --gold-light: #D4B68A;
+  --rust: #B85C3A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.6;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  font-weight: normal;
+  line-height: 1;
+}
+
+/* ─────── NAV ─────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(251, 246, 233, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(26, 43, 92, 0.06);
+  padding: 12px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo img { height: 40px; width: auto; }
+.nav-links { display: none; gap: 28px; list-style: none; }
+.nav-links a {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.18em;
+  font-size: 13px;
+  color: var(--navy);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+.nav-links a.active { color: var(--sage-deep); }
+.nav-links a.active::after { content: ""; position: absolute; bottom: -6px; left: 0; right: 0; height: 1px; background: var(--sage-deep); }
+.nav-links a::after { content: ""; position: absolute; bottom: -6px; left: 0; width: 0; height: 1px; background: var(--sage-deep); transition: width 0.3s; }
+.nav-links a:hover { color: var(--sage-deep); }
+.nav-links a:hover::after { width: 100%; }
+.nav-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px 8px; }
+.nav-toggle span { width: 22px; height: 2px; background: var(--navy); transition: 0.3s; }
+
+/* ─────── HERO ─────── */
+.hero {
+  background: var(--cream);
+  padding: 100px 6% 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-text { position: relative; z-index: 2; }
+
+/* COHORT BANNER */
+.cohort-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--navy);
+  color: var(--gold-light);
+  padding: 10px 18px;
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.2em;
+  font-size: 11px;
+  margin-bottom: 24px;
+}
+.cohort-banner::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+.hero-kicker {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: var(--sage-deep);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-kicker::before { content: ""; width: 28px; height: 1px; background: var(--sage-deep); }
+
+.hero h1 {
+  font-size: clamp(44px, 12vw, 64px);
+  margin-bottom: 22px;
+  color: var(--navy);
+  line-height: 0.96;
+}
+.hero h1 .accent {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--rust);
+  text-transform: lowercase;
+  letter-spacing: 0;
+  display: block;
+  font-size: 0.5em;
+  margin-top: 12px;
+}
+
+.hero-body {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--charcoal);
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  background: var(--sage);
+  color: white;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.2em;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.btn::after { content: "→"; font-family: 'Inter', sans-serif; transition: transform 0.4s; }
+.btn:hover { background: var(--sage-deep); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(91, 148, 121, 0.3); }
+.btn:hover::after { transform: translateX(6px); }
+.btn-large { padding: 22px 44px; font-size: 16px; }
+
+.hero-secondary-link {
+  display: inline-block;
+  margin-left: 16px;
+  margin-top: 16px;
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 16px;
+  color: var(--charcoal);
+  opacity: 0.7;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.hero-secondary-link:hover { opacity: 1; color: var(--navy); }
+
+.hero-image-wrap {
+  position: relative;
+  z-index: 1;
+}
+.hero-image-wrap::before {
+  content: "";
+  position: absolute;
+  top: -16px; left: -16px;
+  right: 24px; bottom: 24px;
+  border: 1px solid var(--gold);
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  filter: contrast(1.03) saturate(1.02);
+  box-shadow: 0 16px 40px rgba(15, 27, 61, 0.15);
+}
+
+/* ─────── WHO THIS IS FOR ─────── */
+.who {
+  padding: 100px 5%;
+  background: var(--ivory);
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-kicker {
+  font-family: 'Bebas Neue';
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  color: var(--sage-deep);
+  margin-bottom: 14px;
+}
+.section-header h2 {
+  font-size: clamp(36px, 9vw, 56px);
+  margin-bottom: 20px;
+  line-height: 1.05;
+}
+.section-header h2 .em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--rust);
+  text-transform: lowercase;
+}
+.section-header p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--charcoal);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.who-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--charcoal);
+  font-weight: 300;
+}
+
+.who-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.who-card {
+  background: var(--cream);
+  border: 1px solid var(--navy);
+  padding: 32px 28px;
+  transition: all 0.4s;
+  position: relative;
+}
+.who-card::before {
+  content: "";
+  position: absolute;
+  top: 14px; left: 14px;
+  right: 14px; bottom: 14px;
+  border: 1px solid rgba(184, 147, 90, 0);
+  pointer-events: none;
+  transition: border-color 0.4s;
+}
+.who-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(15, 27, 61, 0.1);
+}
+.who-card:hover::before { border-color: rgba(184, 147, 90, 0.4); }
+
+.who-card-num {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 36px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.who-card h3 {
+  font-family: 'Bebas Neue';
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+.who-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--charcoal);
+}
+
+/* ─────── CURRICULUM ─────── */
+.curriculum {
+  padding: 100px 5%;
+  background: var(--cream);
+}
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.module {
+  background: white;
+  padding: 24px 28px;
+  border-left: 3px solid var(--sage);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.4s;
+}
+.module:hover {
+  border-left-color: var(--gold);
+  transform: translateX(4px);
+}
+.module-num {
+  font-family: 'Bebas Neue';
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--sage-deep);
+}
+.module h3 {
+  font-family: 'Bebas Neue';
+  font-size: 20px;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.module p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--charcoal);
+}
+
+/* ─────── THREE TRACKS — THE CRITICAL SECTION ─────── */
+.tracks {
+  padding: 100px 5%;
+  background: var(--ivory);
+}
+.tracks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.track-card {
+  background: white;
+  border: 1px solid var(--navy);
+  padding: 36px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.track-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(26, 43, 92, 0.15);
+}
+
+.track-card.featured {
+  background: var(--navy);
+  color: white;
+  border-color: var(--gold);
+  position: relative;
+}
+.track-card.featured::before {
+  content: "MOST POPULAR";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.25em;
+  font-size: 11px;
+  padding: 6px 18px;
+  white-space: nowrap;
+}
+
+.track-card.elite {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+  border-color: var(--gold);
+  position: relative;
+}
+.track-card.elite::before {
+  content: "PRIVATE · 2 SEATS";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: var(--gold-light);
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.25em;
+  font-size: 11px;
+  padding: 6px 18px;
+  white-space: nowrap;
+}
+
+.track-tier {
+  font-family: 'Bebas Neue';
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  color: var(--sage-deep);
+  margin-bottom: 8px;
+}
+.track-card.featured .track-tier { color: var(--gold-light); }
+.track-card.elite .track-tier { color: var(--gold); }
+
+.track-name {
+  font-family: 'Bebas Neue';
+  font-size: 32px;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.track-card.featured .track-name { color: var(--cream); }
+
+.track-tagline {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 16px;
+  color: var(--charcoal);
+  opacity: 0.75;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+.track-card.featured .track-tagline { color: rgba(254, 250, 241, 0.85); opacity: 1; }
+
+.track-price-block {
+  padding: 24px 0;
+  border-top: 1px solid rgba(26, 43, 92, 0.15);
+  border-bottom: 1px solid rgba(26, 43, 92, 0.15);
+  margin-bottom: 28px;
+}
+.track-card.featured .track-price-block {
+  border-color: rgba(184, 147, 90, 0.3);
+}
+
+.track-price {
+  font-family: 'Bebas Neue';
+  font-size: 56px;
+  color: var(--navy);
+  line-height: 1;
+}
+.track-card.featured .track-price { color: var(--gold-light); }
+
+.track-cap {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 13px;
+  color: var(--charcoal);
+  opacity: 0.65;
+  margin-top: 6px;
+}
+.track-card.featured .track-cap { color: rgba(254, 250, 241, 0.7); opacity: 1; }
+
+.track-includes {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  flex-grow: 1;
+}
+.track-includes li {
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--charcoal);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+.track-card.featured .track-includes li { color: rgba(254, 250, 241, 0.92); }
+
+.track-includes li::before {
+  content: "✓";
+  color: var(--sage-deep);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.track-card.featured .track-includes li::before { color: var(--gold-light); }
+
+.track-includes li.highlight {
+  font-weight: 500;
+  color: var(--navy);
+}
+.track-card.featured .track-includes li.highlight { color: var(--cream); }
+
+.track-cta {
+  display: block;
+  text-align: center;
+  padding: 18px 24px;
+  background: var(--sage);
+  color: white;
+  text-decoration: none;
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.2em;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+.track-cta:hover { background: var(--sage-deep); }
+
+.track-card.featured .track-cta {
+  background: var(--gold);
+  color: var(--navy);
+}
+.track-card.featured .track-cta:hover {
+  background: var(--cream);
+}
+
+.track-card.elite .track-cta {
+  background: var(--navy);
+  color: var(--cream);
+}
+.track-card.elite .track-cta:hover {
+  background: var(--navy-deep);
+  color: white;
+}
+
+/* ─────── WHAT'S DIFFERENT ─────── */
+.different {
+  position: relative;
+  padding: 100px 6%;
+  background: var(--navy-deep);
+  color: var(--cream);
+  overflow: hidden;
+}
+.different-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.32;
+  z-index: 0;
+}
+.different-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15, 27, 61, 0.85), rgba(15, 27, 61, 0.95));
+  z-index: 1;
+}
+.different-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.different-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.different-kicker {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 18px;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+}
+.different h2 {
+  font-size: clamp(36px, 9vw, 60px);
+  color: var(--cream);
+  line-height: 1.05;
+}
+.different h2 .em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+  text-transform: lowercase;
+}
+
+.diff-points {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+.diff-point {
+  padding: 28px 24px;
+  border: 1px solid rgba(184, 147, 90, 0.3);
+  background: rgba(15, 27, 61, 0.4);
+}
+.diff-point-num {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 42px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.diff-point h3 {
+  font-family: 'Bebas Neue';
+  font-size: 22px;
+  color: var(--cream);
+  margin-bottom: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+}
+.diff-point p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(254, 250, 241, 0.85);
+  font-weight: 300;
+}
+
+/* ─────── APPLICATION PROCESS ─────── */
+.process {
+  padding: 100px 5%;
+  background: var(--cream);
+}
+.process-steps {
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.process-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(26, 43, 92, 0.12);
+}
+.process-step:last-child { border-bottom: none; padding-bottom: 0; }
+
+.process-num {
+  font-family: 'Bebas Neue';
+  font-size: 56px;
+  color: var(--gold);
+  line-height: 0.9;
+  text-align: center;
+}
+.process-text h3 {
+  font-family: 'Bebas Neue';
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+.process-text p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--charcoal);
+}
+
+/* ─────── FAQ ─────── */
+.faq {
+  padding: 100px 5%;
+  background: var(--ivory);
+}
+.faq-wrap { max-width: 820px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid rgba(26, 43, 92, 0.18); padding: 22px 0; cursor: pointer; }
+.faq-question {
+  font-family: 'Bebas Neue';
+  font-size: 18px;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.faq-toggle {
+  font-family: 'Inter';
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--sage-deep);
+  transition: transform 0.4s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s, padding 0.3s;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--charcoal);
+}
+.faq-item.open .faq-answer { max-height: 360px; padding-top: 14px; }
+
+/* ─────── FINAL CTA ─────── */
+.final-cta {
+  padding: 120px 6%;
+  background: var(--navy-deep);
+  color: var(--cream);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(184, 147, 90, 0.18), transparent 60%);
+  z-index: 0;
+}
+.final-cta-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+.final-cta-kicker {
+  font-family: 'Bebas Neue';
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid rgba(184, 147, 90, 0.4);
+}
+.final-cta-kicker::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2s infinite;
+}
+.final-cta h2 {
+  font-size: clamp(36px, 10vw, 60px);
+  color: var(--cream);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+.final-cta h2 .em {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+  text-transform: lowercase;
+}
+.final-cta-italic {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 18px;
+  color: var(--gold-light);
+  margin-bottom: 36px;
+}
+.final-cta-sub {
+  font-size: 16px;
+  color: rgba(254, 250, 241, 0.8);
+  margin-bottom: 40px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+.final-cta-sub strong {
+  color: var(--gold-light);
+  font-weight: 500;
+}
+.btn-cream {
+  background: var(--cream);
+  color: var(--navy);
+}
+.btn-cream:hover {
+  background: white;
+  box-shadow: 0 14px 32px rgba(245, 235, 214, 0.3);
+}
+
+/* ─────── FOOTER ─────── */
+footer {
+  background: var(--navy-deep);
+  color: var(--cream);
+  padding: 64px 5% 32px;
+  border-top: 1px solid rgba(184, 147, 90, 0.2);
+}
+.footer-top { max-width: 1240px; margin: 0 auto 32px; text-align: center; }
+.footer-logo img { height: 56px; width: auto; margin: 0 auto; }
+.footer-tag {
+  font-family: 'Inter';
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(254, 250, 241, 0.5);
+  margin-top: 10px;
+}
+.footer-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  max-width: 1240px;
+  margin: 40px auto;
+  padding-top: 40px;
+  border-top: 1px solid rgba(254, 250, 241, 0.1);
+  text-align: center;
+}
+.footer-col h4 {
+  font-family: 'Bebas Neue';
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+  margin-bottom: 18px;
+}
+.footer-col a {
+  display: block;
+  color: rgba(254, 250, 241, 0.7);
+  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--gold-light); }
+.footer-bottom {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(254, 250, 241, 0.1);
+  text-align: center;
+}
+.copyright {
+  font-size: 11px;
+  color: rgba(254, 250, 241, 0.5);
+  margin-bottom: 14px;
+  letter-spacing: 0.05em;
+}
+.disclaimer {
+  font-family: 'Bebas Neue';
+  font-size: 10px;
+  color: rgba(254, 250, 241, 0.6);
+  letter-spacing: 0.18em;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ═══════ TABLET ═══════ */
+@media (min-width: 700px) {
+  nav { padding: 14px 5%; }
+  .nav-logo img { height: 48px; }
+  .nav-links { display: flex; }
+  .nav-toggle { display: none; }
+
+  .hero {
+    padding: 130px 6% 80px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .hero h1 { font-size: clamp(54px, 7vw, 80px); }
+  .hero-body { font-size: 17px; max-width: 480px; }
+
+  .who { padding: 130px 5%; }
+  .who-cards { grid-template-columns: repeat(3, 1fr); }
+
+  .curriculum { padding: 130px 5%; }
+  .curriculum-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+  .tracks { padding: 130px 5%; }
+  .tracks-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+
+  .different { padding: 130px 6%; }
+  .diff-points { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .process { padding: 130px 5%; }
+  .process-step { grid-template-columns: 100px 1fr; gap: 32px; }
+  .process-num { font-size: 72px; }
+
+  .faq { padding: 130px 5%; }
+  .faq-question { font-size: 20px; }
+
+  .final-cta { padding: 150px 5%; }
+
+  footer { padding: 80px 5% 40px; }
+  .footer-top { text-align: left; }
+  .footer-logo img { margin: 0; }
+  .footer-cols { grid-template-columns: repeat(3, 1fr); gap: 48px; text-align: left; }
+}
+
+/* ═══════ DESKTOP ═══════ */
+@media (min-width: 1024px) {
+  nav { padding: 16px 5%; }
+  .nav-logo img { height: 52px; }
+  .nav-links { gap: 42px; font-size: 14px; }
+
+  .hero {
+    padding: 140px 6% 100px;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 80px;
+    position: relative;
+  }
+  .hero::before {
+    content: "THE • ACADEMY";
+    position: absolute;
+    top: 50%;
+    right: -100px;
+    font-family: 'Bebas Neue';
+    font-size: 280px;
+    color: var(--navy);
+    opacity: 0.035;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero h1 { font-size: clamp(64px, 7vw, 96px); }
+  .hero-body { font-size: 18px; }
+
+  .curriculum-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+  .track-name { font-size: 38px; }
+  .track-price { font-size: 64px; }
+
+  .different { padding: 160px 8%; }
+
+  .final-cta { padding: 180px 5%; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-text { animation: fadeUp 1s ease-out; }
+</style>
+</head>
+<body>
+
+<!-- ────── NAV ────── -->
+<nav>
+  <div class="nav-logo"><img src="assets/logo-navy.png" alt="Healing Eyes"></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="foundation-course.html">Foundation Course</a></li>
+    <li><a href="#" class="active">The Academy</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ────── HERO ────── -->
+<section class="hero" id="top">
+  <div class="hero-text">
+    <div class="cohort-banner">COHORT 1 · BEGINS JULY 1</div>
+    <div class="hero-kicker">— THE HEALING EYES ACADEMY</div>
+    <h1>
+      Learn to Read Eyes<br>at Depth.
+      <span class="accent">— ten weeks. real work. real results.</span>
+    </h1>
+    <p class="hero-body">
+      The complete iridology training. Ten weeks of progressive curriculum, a physical book mailed to you, weekly assignments, and direct access to Samantha. Three tracks at three depths. Cohort 1 begins July 1.
+    </p>
+    <a href="#tracks" class="btn">Apply for Cohort 1</a>
+    <a href="#tracks" class="hero-secondary-link">— or see the three tracks ↓</a>
+  </div>
+  <div>
+    <div class="hero-image-wrap">
+      <img class="hero-image" src="assets/foundation-hero.jpg" alt="Iridology study journal with handwritten notes and framed iris photograph">
+    </div>
+  </div>
+</section>
+
+<!-- ────── WHO THIS IS FOR ────── -->
+<section class="who">
+  <div class="section-header">
+    <div class="section-kicker">— Who This Is For</div>
+    <h2>Built for <span class="em">serious</span> students.</h2>
+    <p>This isn't a casual course. It's an iridology training.</p>
+  </div>
+  <p class="who-intro">
+    The Academy isn't for the casually curious. It's for people who want to do this work — read eyes, support clients, build a practice. Apply if any of these sound like you:
+  </p>
+  <div class="who-cards">
+    <div class="who-card">
+      <div class="who-card-num">01</div>
+      <h3>Future Iridologists</h3>
+      <p>You want to read eyes professionally. Build your own practice. Charge for readings. The Academy is your foundation.</p>
+    </div>
+    <div class="who-card">
+      <div class="who-card-num">02</div>
+      <h3>Holistic Professionals</h3>
+      <p>You're a coach, herbalist, or wellness professional adding iridology to your toolkit. The Academy integrates iridology into work you're already doing.</p>
+    </div>
+    <div class="who-card">
+      <div class="who-card-num">03</div>
+      <h3>Lifelong Learners</h3>
+      <p>You're not pursuing a career, but you want depth. You don't want to settle for fragmented free content. You want to actually master this.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ────── CURRICULUM ────── -->
+<section class="curriculum">
+  <div class="section-header">
+    <div class="section-kicker">— What You'll Learn</div>
+    <h2>Ten Weeks.<br><span class="em">built to build mastery.</span></h2>
+    <p>Eight modules. Progressive depth. Real iridology — not theory.</p>
+  </div>
+  <div class="curriculum-grid">
+    <div class="module">
+      <div class="module-num">MODULE 01</div>
+      <h3>Foundations of the Iris</h3>
+      <p>Anatomy, color, fiber patterns, what each layer reveals. The starting point for all reading work.</p>
+    </div>
+    <div class="module">
+      <div class="module-num">MODULE 02</div>
+      <h3>Sclerology Integration</h3>
+      <p>Reading the white of the eye in tandem with the iris. Samantha's signature methodology.</p>
+    </div>
+    <div class="module">
+      <div class="module-num">MODULE 03</div>
+      <h3>Marker Identification</h3>
+      <p>Pigment spots, contraction rings, radial furrows, lacunae. What each marker means and where to look.</p>
+    </div>
+    <div class="module">
+      <div class="module-num">MODULE 04</div>
+      <h3>The 14 Body Systems</h3>
+      <p>How each system shows up in the eyes. Hepatic, lymphatic, endocrine, nervous, and ten more.</p>
+    </div>
+    <div class="module">
+      <div class="module-num">MODULE 05</div>
+      <h3>Reading Real Eyes</h3>
+      <p>Live case studies and client photo analysis. Watch the methodology applied to real client work.</p>
+    </div>
+    <div class="module">
+      <div class="module-num">MODULE 06</div>
+      <h3>Building Your Methodology</h3>
+      <p>Develop your own approach — not Samantha's clone. The principles that let you build your own work.</p>
+    </div>
+    <div class="module">
+      <div class="module-num">MODULE 07</div>
+      <h3>Client Communication</h3>
+      <p>How to present readings without overstating. The line between insight and diagnosis.</p>
+    </div>
+    <div class="module">
+      <div class="module-num">MODULE 08</div>
+      <h3>Professional Practice</h3>
+      <p>Pricing, scheduling, scope, ethics. Everything you need to start working with clients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ────── THREE TRACKS ────── -->
+<section class="tracks" id="tracks">
+  <div class="section-header">
+    <div class="section-kicker">— Three Tracks</div>
+    <h2>Three Tracks. Three Depths.<br><span class="em">one</span> methodology.</h2>
+    <p>Pick the level of access that matches the work you're ready to do.</p>
+  </div>
+  <div class="tracks-grid">
+
+    <!-- SELF-PACED -->
+    <div class="track-card">
+      <div class="track-tier">TIER 5A</div>
+      <div class="track-name">Self-Paced</div>
+      <div class="track-tagline">Independent study at your pace</div>
+      <div class="track-price-block">
+        <div class="track-price">$1,997</div>
+        <div class="track-cap">Unlimited capacity</div>
+      </div>
+      <ul class="track-includes">
+        <li class="highlight">Complete 10-week video curriculum</li>
+        <li>Drip-released weekly modules</li>
+        <li>Physical book mailed to you</li>
+        <li>Self-assessment workbook</li>
+        <li>Weekly assignments (no grading)</li>
+        <li>1 redeemable call credit (1-year window)</li>
+      </ul>
+      <a href="#" class="track-cta">Apply — $1,997</a>
+    </div>
+
+    <!-- GROUP TRACK - FEATURED -->
+    <div class="track-card featured">
+      <div class="track-tier">TIER 5B</div>
+      <div class="track-name">Group Track</div>
+      <div class="track-tagline">Community + weekly group access</div>
+      <div class="track-price-block">
+        <div class="track-price">$3,500</div>
+        <div class="track-cap">Cap: 8 students per cohort</div>
+      </div>
+      <ul class="track-includes">
+        <li class="highlight">Everything in Self-Paced</li>
+        <li class="highlight">Weekly 2-hour group call with Samantha</li>
+        <li>Live group sessions every Friday</li>
+        <li>Cohort community access</li>
+        <li>Group assignment review</li>
+        <li>Q&amp;A with Samantha each week</li>
+      </ul>
+      <a href="#" class="track-cta">Apply — $3,500</a>
+    </div>
+
+    <!-- PRIVATE TRACK -->
+    <div class="track-card elite">
+      <div class="track-tier">TIER 5C</div>
+      <div class="track-name">Private Track</div>
+      <div class="track-tagline">1-on-1 access. Maximum depth.</div>
+      <div class="track-price-block">
+        <div class="track-price">$5,000</div>
+        <div class="track-cap">Cap: 2 students per cohort</div>
+      </div>
+      <ul class="track-includes">
+        <li class="highlight">Everything in Self-Paced</li>
+        <li class="highlight">Weekly 2-hour private 1-on-1</li>
+        <li>Direct Thursday session with Samantha</li>
+        <li>Personalized methodology coaching</li>
+        <li>Practice client review sessions</li>
+        <li>Custom feedback on your work</li>
+      </ul>
+      <a href="#" class="track-cta">Apply — $5,000</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ────── WHAT'S DIFFERENT ────── -->
+<section class="different">
+  <img class="different-bg" src="assets/iris-bio-bg.jpg" alt="">
+  <div class="different-overlay"></div>
+  <div class="different-content">
+    <div class="different-header">
+      <div class="different-kicker">— what makes this different</div>
+      <h2>This is not <span class="em">another iridology</span> course.</h2>
+    </div>
+    <div class="diff-points">
+      <div class="diff-point">
+        <div class="diff-point-num">01.</div>
+        <h3>Sclerology Integrated</h3>
+        <p>Most iridology programs ignore sclerology entirely. The Academy teaches you to read the iris AND the sclera together — Samantha's actual methodology.</p>
+      </div>
+      <div class="diff-point">
+        <div class="diff-point-num">02.</div>
+        <h3>Real Client Photography</h3>
+        <p>Every example, every case study, every demonstration uses real client eyes. Not stock photos. Not stylized illustrations. The work, as it actually appears.</p>
+      </div>
+      <div class="diff-point">
+        <div class="diff-point-num">03.</div>
+        <h3>Build Your Own Methodology</h3>
+        <p>Samantha doesn't want clones. The Academy teaches you the principles so you can develop your own approach — the way she developed hers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────── APPLICATION PROCESS ────── -->
+<section class="process">
+  <div class="section-header">
+    <div class="section-kicker">— What Happens Next</div>
+    <h2>The Application <span class="em">process.</span></h2>
+    <p>Four steps. Five business days. No automated nonsense.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="process-num">01</div>
+      <div class="process-text">
+        <h3>You Apply</h3>
+        <p>Fill out a short application telling Samantha about you, your background, and which track you want. Takes about 10 minutes.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">02</div>
+      <div class="process-text">
+        <h3>Samantha Reviews</h3>
+        <p>She personally reads every application. This isn't automated. She wants to know who's joining her cohort.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">03</div>
+      <div class="process-text">
+        <h3>You Hear Back</h3>
+        <p>Within 5 business days. Accepted applicants receive a payment link for their selected track.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">04</div>
+      <div class="process-text">
+        <h3>You Begin</h3>
+        <p>Cohort 1 starts July 1. Module 1 unlocks. Group Track first call. Private Track first session. The work begins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────── FAQ ────── -->
+<section class="faq">
+  <div class="section-header">
+    <div class="section-kicker">— Real Questions, Real Answers</div>
+    <h2>Before You Apply</h2>
+    <p>Everything you'd want to ask before committing to the Academy.</p>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-item">
+      <div class="faq-question">When does Cohort 1 start, and what if I miss it? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Cohort 1 begins July 1, 2026. The application window is open now. If you miss this cohort, the next will open later in 2026 — but capacity is limited and Cohort 1 will fill first. Group Track caps at 8 students. Private Track caps at 2 students.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Why is there an application instead of just letting me buy? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">The Academy is a small-cohort program with limited seats. Samantha personally reads each application to make sure the cohort is filled with people who will do the work. The application protects you (you're not paying $5,000 to be in a room of disengaged students) and protects the program.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I switch tracks once I'm accepted? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Possibly — depending on track availability. If you're accepted into Self-Paced and the Group Track has open seats, you can upgrade by paying the difference. Downgrades aren't refundable but you can apply your tuition to a future cohort if circumstances change.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Do I need to have completed the Foundation Course first? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">No, the Foundation Course is not a prerequisite. The Academy starts from foundational principles and builds to advanced reading work. That said, if you've already completed Foundation Course, you'll move through Module 1 faster.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What if I can't make the weekly calls? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">Group Track calls are recorded — if you miss one, you'll have access to the replay within 24 hours. Private Track sessions are scheduled with you personally, so we can find times that work. If you regularly can't make weekly calls, the Self-Paced track is probably the better fit.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ────── FINAL CTA ────── -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="final-cta-kicker">COHORT 1 · BEGINS JULY 1</div>
+    <h2>Ready to <span class="em">do the work?</span></h2>
+    <div class="final-cta-italic">— application takes 10 minutes. decision in 5 business days.</div>
+    <p class="final-cta-sub">
+      Cohort 1 has limited capacity. <strong>Group Track caps at 8.</strong> <strong>Private Track caps at 2.</strong> Self-Paced is unlimited but the cohort start date is fixed.
+    </p>
+    <a href="#tracks" class="btn btn-cream btn-large">Apply for Cohort 1</a>
+  </div>
+</section>
+
+<!-- ────── FOOTER ────── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo"><img src="assets/logo-white.png" alt="Healing Eyes"></div>
+    <div class="footer-tag">Iridology &amp; Sclerology</div>
+  </div>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h4>Healing Eyes</h4>
+      <a href="index.html">About Samantha</a>
+      <a href="index.html">The Story</a>
+      <a href="#">The Academy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Work With Samantha</h4>
+      <a href="#">Eye Type Guide ($27)</a>
+      <a href="#">Body Systems Library ($47)</a>
+      <a href="#">Mini Iris Snapshot ($67)</a>
+      <a href="#">Video Analysis ($197)</a>
+      <a href="#">Live 1-on-1 Session ($247)</a>
+      <a href="foundation-course.html">Foundation Course ($347)</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="#">Reach Samantha on TikTok</a>
+      <a href="#">Legal</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="copyright">© 2026 Healing Eyes. All Rights Reserved.</div>
+    <div class="disclaimer">Iridology and sclerology are not diagnostic tools and are not a substitute for medical care. Information provided by Healing Eyes is for educational purposes only.</div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => item.classList.toggle('open'));
+});
+</script>
+
+</body>
+</html>
