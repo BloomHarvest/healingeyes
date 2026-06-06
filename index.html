@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Healing Eyes — Iridology &amp; Sclerology</title>
+<title>The Healing Eyes Academy — Iridology Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@ h1, h2, h3, h4 {
   line-height: 1;
 }
 
-/* ─────── NAV — MOBILE FIRST ─────── */
+/* ─────── NAV ─────── */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -59,17 +59,8 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-
-.nav-logo img {
-  height: 40px;
-  width: auto;
-}
-
-.nav-links {
-  display: none;
-  gap: 28px;
-  list-style: none;
-}
+.nav-logo img { height: 40px; width: auto; }
+.nav-links { display: none; gap: 28px; list-style: none; }
 .nav-links a {
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 0.18em;
@@ -79,37 +70,33 @@ nav {
   position: relative;
   transition: color 0.3s;
 }
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -6px; left: 0;
-  width: 0; height: 1px;
-  background: var(--sage-deep);
-  transition: width 0.3s;
-}
+.nav-links a.active { color: var(--sage-deep); }
+.nav-links a.active::after { content: ""; position: absolute; bottom: -6px; left: 0; right: 0; height: 1px; background: var(--sage-deep); }
+.nav-links a::after { content: ""; position: absolute; bottom: -6px; left: 0; width: 0; height: 1px; background: var(--sage-deep); transition: width 0.3s; }
 .nav-links a:hover { color: var(--sage-deep); }
 .nav-links a:hover::after { width: 100%; }
-
-/* mobile hamburger */
-.nav-toggle {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px 8px;
+.nav-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px 8px; }
+.nav-toggle span { width: 22px; height: 2px; background: var(--navy); transition: 0.3s; }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 26px;
+  background: var(--sage);
+  color: white;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.2em;
+  font-size: 13px;
+  transition: all 0.3s;
 }
-.nav-toggle span {
-  width: 22px; height: 2px;
-  background: var(--navy);
-  transition: 0.3s;
-}
+.nav-cta::after { content: "→"; font-family: 'Inter', sans-serif; transition: transform 0.3s; }
+.nav-cta:hover { background: var(--sage-deep); transform: translateY(-1px); }
+.nav-cta:hover::after { transform: translateX(4px); }
 
-/* ─────── HERO — MOBILE FIRST ─────── */
+/* ─────── HERO ─────── */
 .hero {
   background: var(--cream);
-  min-height: 100vh;
   padding: 100px 6% 60px;
   display: flex;
   flex-direction: column;
@@ -117,33 +104,50 @@ nav {
   position: relative;
   overflow: hidden;
 }
+.hero-text { position: relative; z-index: 2; }
 
-.hero-text {
-  position: relative;
-  z-index: 2;
+/* COHORT BANNER */
+.cohort-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--navy);
+  color: var(--gold-light);
+  padding: 10px 18px;
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.2em;
+  font-size: 11px;
+  margin-bottom: 24px;
+}
+.cohort-banner::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
 }
 
 .hero-kicker {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 11px;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.4em;
   color: var(--sage-deep);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.hero-kicker::before {
-  content: "";
-  width: 28px; height: 1px;
-  background: var(--sage-deep);
-}
+.hero-kicker::before { content: ""; width: 28px; height: 1px; background: var(--sage-deep); }
 
 .hero h1 {
-  font-size: clamp(48px, 14vw, 72px);
-  margin-bottom: 24px;
+  font-size: clamp(44px, 12vw, 64px);
+  margin-bottom: 22px;
   color: var(--navy);
-  line-height: 0.94;
+  line-height: 0.96;
 }
 .hero h1 .accent {
   font-family: 'Cormorant Garamond', serif;
@@ -159,7 +163,7 @@ nav {
 
 .hero-body {
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--charcoal);
   margin-bottom: 32px;
   font-weight: 300;
@@ -169,7 +173,7 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 16px 32px;
+  padding: 18px 36px;
   background: var(--sage);
   color: white;
   text-decoration: none;
@@ -180,23 +184,28 @@ nav {
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.btn::after {
-  content: "→";
-  font-family: 'Inter', sans-serif;
-  transition: transform 0.4s;
-}
-.btn:hover {
-  background: var(--sage-deep);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(91, 148, 121, 0.3);
-}
+.btn::after { content: "→"; font-family: 'Inter', sans-serif; transition: transform 0.4s; }
+.btn:hover { background: var(--sage-deep); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(91, 148, 121, 0.3); }
 .btn:hover::after { transform: translateX(6px); }
+.btn-large { padding: 22px 44px; font-size: 16px; }
 
-/* HERO IMAGE FRAME */
+.hero-secondary-link {
+  display: inline-block;
+  margin-left: 16px;
+  margin-top: 16px;
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 16px;
+  color: var(--charcoal);
+  opacity: 0.7;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.hero-secondary-link:hover { opacity: 1; color: var(--navy); }
+
 .hero-image-wrap {
   position: relative;
   z-index: 1;
-  margin-bottom: 32px;
 }
 .hero-image-wrap::before {
   content: "";
@@ -213,126 +222,15 @@ nav {
   object-fit: cover;
   position: relative;
   z-index: 1;
-  filter: contrast(1.04) saturate(1.05);
-  box-shadow: 0 16px 40px rgba(15, 27, 61, 0.12);
+  filter: contrast(1.03) saturate(1.02);
+  box-shadow: 0 16px 40px rgba(15, 27, 61, 0.15);
 }
 
-/* CREDENTIALS */
-.hero-creds {
-  background: var(--cream);
-  padding: 22px 24px;
-  border: 1px solid var(--navy);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  z-index: 2;
-  box-shadow: 0 8px 24px rgba(26, 43, 92, 0.08);
+/* ─────── WHO THIS IS FOR ─────── */
+.who {
+  padding: 100px 5%;
+  background: var(--ivory);
 }
-
-.cred-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  padding-bottom: 14px;
-  border-bottom: 1px solid rgba(26, 43, 92, 0.12);
-}
-.cred-item:last-child { border-bottom: none; padding-bottom: 0; }
-
-.cred-label {
-  font-family: 'Bebas Neue';
-  font-size: 16px;
-  color: var(--navy);
-  letter-spacing: 0.08em;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.cred-sub {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-size: 12px;
-  color: var(--charcoal);
-  opacity: 0.65;
-  line-height: 1.2;
-}
-
-/* ─────── BIO ─────── */
-.bio {
-  position: relative;
-  padding: 100px 6%;
-  background: var(--navy-deep);
-  color: var(--cream);
-  overflow: hidden;
-  text-align: center;
-}
-
-.bio-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.45;
-  z-index: 0;
-}
-.bio-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(15, 27, 61, 0.75), rgba(15, 27, 61, 0.92));
-  z-index: 1;
-}
-
-.bio-content {
-  position: relative;
-  z-index: 2;
-  max-width: 920px;
-  margin: 0 auto;
-}
-
-.bio-kicker {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 18px;
-  color: var(--gold-light);
-  margin-bottom: 24px;
-  letter-spacing: 0.05em;
-}
-
-.bio h2 {
-  font-size: clamp(40px, 11vw, 64px);
-  color: var(--cream);
-  line-height: 1;
-  margin-bottom: 36px;
-}
-.bio h2 .em {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--gold-light);
-  text-transform: lowercase;
-  letter-spacing: 0;
-}
-
-.bio-body {
-  font-size: 16px;
-  line-height: 1.85;
-  font-weight: 300;
-  color: rgba(254, 250, 241, 0.92);
-  max-width: 640px;
-  margin: 0 auto;
-}
-.bio-body p + p { margin-top: 22px; }
-.bio-body strong {
-  color: var(--cream);
-  font-weight: 500;
-}
-
-/* ─────── PRODUCTS ─────── */
-.products {
-  padding: 100px 5% 80px;
-  background: var(--cream);
-}
-
 .section-header {
   text-align: center;
   margin-bottom: 60px;
@@ -349,7 +247,15 @@ nav {
 }
 .section-header h2 {
   font-size: clamp(36px, 9vw, 56px);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  line-height: 1.05;
+}
+.section-header h2 .em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--rust);
+  text-transform: lowercase;
 }
 .section-header p {
   font-family: 'Cormorant Garamond', serif;
@@ -357,772 +263,693 @@ nav {
   font-size: 18px;
   color: var(--charcoal);
   font-weight: 400;
+  line-height: 1.5;
 }
 
-.products-grid {
+.who-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--charcoal);
+  font-weight: 300;
+}
+
+.who-cards {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  max-width: 1280px;
+  max-width: 1100px;
   margin: 0 auto;
 }
-
-.product-card {
-  background: white;
+.who-card {
+  background: var(--cream);
   border: 1px solid var(--navy);
   padding: 32px 28px;
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: all 0.4s;
   position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
 }
-
-.product-card::before {
+.who-card::before {
   content: "";
   position: absolute;
-  bottom: 0; left: 0;
-  width: 100%; height: 0;
-  background: var(--navy);
-  transition: height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-  z-index: 0;
+  top: 14px; left: 14px;
+  right: 14px; bottom: 14px;
+  border: 1px solid rgba(184, 147, 90, 0);
+  pointer-events: none;
+  transition: border-color 0.4s;
 }
-.product-card:hover::before { height: 100%; }
-.product-card:hover .product-tier,
-.product-card:hover .product-name,
-.product-card:hover .product-desc,
-.product-card:hover .product-price { color: white; }
-.product-card:hover .product-divider { background: var(--gold); }
-.product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(26, 43, 92, 0.15); }
-
-.product-card > * { position: relative; z-index: 1; }
-
-.product-tier {
-  font-family: 'Bebas Neue';
-  font-size: 10px;
-  letter-spacing: 0.3em;
-  color: var(--sage-deep);
-  margin-bottom: 8px;
-  transition: color 0.4s;
+.who-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(15, 27, 61, 0.1);
 }
-.product-name {
+.who-card:hover::before { border-color: rgba(184, 147, 90, 0.4); }
+
+.who-card-num {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 36px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.who-card h3 {
   font-family: 'Bebas Neue';
-  font-size: 24px;
+  font-size: 22px;
   color: var(--navy);
   margin-bottom: 14px;
-  line-height: 1.05;
-  transition: color 0.4s;
+  line-height: 1.1;
 }
-.product-divider {
-  width: 28px;
-  height: 1px;
-  background: var(--navy);
-  margin-bottom: 18px;
-  transition: background 0.4s;
+.who-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--charcoal);
 }
-.product-desc {
+
+/* ─────── CURRICULUM ─────── */
+.curriculum {
+  padding: 100px 5%;
+  background: var(--cream);
+}
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.module {
+  background: white;
+  padding: 24px 28px;
+  border-left: 3px solid var(--sage);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.4s;
+}
+.module:hover {
+  border-left-color: var(--gold);
+  transform: translateX(4px);
+}
+.module-num {
+  font-family: 'Bebas Neue';
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--sage-deep);
+}
+.module h3 {
+  font-family: 'Bebas Neue';
+  font-size: 20px;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.module p {
   font-size: 14px;
   line-height: 1.65;
   color: var(--charcoal);
-  margin-bottom: 22px;
-  flex-grow: 1;
-  transition: color 0.4s;
 }
-.product-price {
-  font-family: 'Bebas Neue';
-  font-size: 30px;
+
+/* ─────── THREE TRACKS — THE CRITICAL SECTION ─────── */
+.tracks {
+  padding: 100px 5%;
+  background: var(--ivory);
+}
+.tracks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.track-card {
+  background: white;
+  border: 1px solid var(--navy);
+  padding: 36px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.track-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(26, 43, 92, 0.15);
+}
+
+.track-card.featured {
+  background: var(--navy);
+  color: white;
+  border-color: var(--gold);
+  position: relative;
+}
+.track-card.featured::before {
+  content: "MOST POPULAR";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
   color: var(--navy);
-  margin-bottom: 16px;
-  transition: color 0.4s;
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.25em;
+  font-size: 11px;
+  padding: 6px 18px;
+  white-space: nowrap;
 }
-.product-cta {
-  display: inline-flex;
+
+.track-card.elite {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+  border-color: var(--gold);
+  position: relative;
+}
+.track-card.elite::before {
+  content: "PRIVATE · 2 SEATS";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: var(--gold-light);
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.25em;
+  font-size: 11px;
+  padding: 6px 18px;
+  white-space: nowrap;
+}
+
+.track-tier {
+  font-family: 'Bebas Neue';
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  color: var(--sage-deep);
+  margin-bottom: 8px;
+}
+.track-card.featured .track-tier { color: var(--gold-light); }
+.track-card.elite .track-tier { color: var(--gold); }
+
+.track-name {
+  font-family: 'Bebas Neue';
+  font-size: 32px;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.track-card.featured .track-name { color: var(--cream); }
+
+.track-tagline {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 16px;
+  color: var(--charcoal);
+  opacity: 0.75;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+.track-card.featured .track-tagline { color: rgba(254, 250, 241, 0.85); opacity: 1; }
+
+.track-price-block {
+  padding: 24px 0;
+  border-top: 1px solid rgba(26, 43, 92, 0.15);
+  border-bottom: 1px solid rgba(26, 43, 92, 0.15);
+  margin-bottom: 28px;
+}
+.track-card.featured .track-price-block {
+  border-color: rgba(184, 147, 90, 0.3);
+}
+
+.track-price {
+  font-family: 'Bebas Neue';
+  font-size: 56px;
+  color: var(--navy);
+  line-height: 1;
+}
+.track-card.featured .track-price { color: var(--gold-light); }
+
+.track-cap {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 13px;
+  color: var(--charcoal);
+  opacity: 0.65;
+  margin-top: 6px;
+}
+.track-card.featured .track-cap { color: rgba(254, 250, 241, 0.7); opacity: 1; }
+
+.track-includes {
+  list-style: none;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.track-includes li {
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.track-includes li::before {
+  content: "•";
+  color: var(--gold);
+}
+.track-card.featured .track-includes li::before { color: var(--gold-light); }
+
+.track-cta {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  padding: 12px 22px;
+  padding: 18px;
   background: var(--sage);
   color: white;
   text-decoration: none;
   font-family: 'Bebas Neue';
-  letter-spacing: 0.16em;
-  font-size: 12px;
-  width: fit-content;
-  transition: all 0.3s;
-}
-.product-cta::after { content: "→"; font-family: 'Inter'; transition: transform 0.3s; }
-.product-cta:hover { background: var(--sage-deep); }
-.product-cta:hover::after { transform: translateX(4px); }
-
-.product-card.featured {
-  background: var(--navy);
-  color: white;
-  padding: 40px 28px;
-}
-.product-card.featured::before { display: none; }
-.product-card.featured:hover { transform: translateY(-4px); }
-.product-card.featured .product-tier { color: var(--gold-light); }
-.product-card.featured .product-name {
-  color: white;
-  font-size: 36px;
-  margin-bottom: 16px;
-}
-.product-card.featured .product-divider {
-  background: var(--gold);
-  width: 48px;
-  height: 2px;
-  margin-bottom: 20px;
-}
-.product-card.featured .product-desc {
-  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.2em;
   font-size: 14px;
-  margin-bottom: 24px;
-}
-.featured-tracks {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-.track-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 16px 18px;
-  border: 1px solid rgba(184, 147, 90, 0.4);
   transition: all 0.3s;
 }
-.track-item:hover {
-  background: rgba(184, 147, 90, 0.1);
-  border-color: var(--gold);
+.track-cta:hover {
+  background: var(--sage-deep);
+  transform: translateY(-2px);
 }
-.track-name {
-  font-family: 'Bebas Neue';
-  font-size: 15px;
-  letter-spacing: 0.08em;
-  color: var(--cream);
-}
-.track-price {
-  font-family: 'Bebas Neue';
-  font-size: 20px;
-  color: var(--gold-light);
-}
-.track-cta {
-  padding: 16px 24px;
+.track-card.featured .track-cta {
   background: var(--gold);
   color: var(--navy);
-  font-family: 'Bebas Neue';
-  letter-spacing: 0.18em;
-  font-size: 13px;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s;
-  display: block;
 }
-.track-cta:hover { background: var(--cream); }
+.track-card.featured .track-cta:hover {
+  background: var(--gold-light);
+}
 
-/* ─────── TESTIMONIALS ─────── */
-.testimonials {
+/* ─────── ABOUT SAMANTHA ─────── */
+.about {
   padding: 100px 5%;
-  background: var(--ivory);
-}
-.testimonials-grid {
+  background: var(--cream);
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
-  max-width: 1240px;
-  margin: 0 auto;
+  gap: 48px;
 }
-.testimonial {
-  background: var(--cream);
-  padding: 40px 32px;
+.about-image-wrap {
   position: relative;
-  border-top: 3px solid var(--sage);
 }
-.testimonial::before {
-  content: "\201C";
-  position: absolute;
-  top: -8px; left: 20px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 90px;
-  color: var(--gold);
-  line-height: 1;
-}
-.testimonial-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 17px;
-  line-height: 1.55;
-  color: var(--charcoal);
-  margin-bottom: 24px;
-  margin-top: 16px;
-  font-weight: 400;
-}
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(26, 43, 92, 0.15);
-}
-.testimonial-avatar {
-  width: 44px; height: 44px;
+.about-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   border-radius: 50%;
-  background: var(--navy);
-  color: var(--cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Bebas Neue';
-  font-size: 18px;
-  flex-shrink: 0;
+  border: 1px solid var(--gold);
+  padding: 12px;
+  background: var(--ivory);
 }
-.testimonial-name {
-  font-family: 'Bebas Neue';
-  font-size: 15px;
-  color: var(--navy);
-  letter-spacing: 0.1em;
+.about-content h2 {
+  font-size: clamp(32px, 8vw, 48px);
+  margin-bottom: 24px;
 }
-.testimonial-loc {
-  font-family: 'Inter';
-  font-size: 11px;
-  color: var(--charcoal);
-  opacity: 0.6;
-  letter-spacing: 0.05em;
+.about-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-weight: 300;
 }
 
 /* ─────── FAQ ─────── */
 .faq {
   padding: 100px 5%;
-  background: var(--cream);
+  background: var(--ivory);
 }
-.faq-wrap {
-  max-width: 820px;
+.faq-grid {
+  max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .faq-item {
-  border-bottom: 1px solid rgba(26, 43, 92, 0.18);
-  padding: 22px 0;
-  cursor: pointer;
+  background: white;
+  border: 1px solid rgba(26, 43, 92, 0.1);
 }
-.faq-question {
-  font-family: 'Bebas Neue';
-  font-size: 18px;
-  color: var(--navy);
-  letter-spacing: 0.04em;
+.faq-q {
+  width: 100%;
+  padding: 24px;
+  background: none;
+  border: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  cursor: pointer;
+  text-align: left;
 }
-.faq-toggle {
-  font-family: 'Inter';
-  font-size: 22px;
-  font-weight: 300;
-  color: var(--sage-deep);
-  transition: transform 0.4s;
-  flex-shrink: 0;
+.faq-q h4 {
+  font-family: 'Bebas Neue';
+  font-size: 18px;
+  color: var(--navy);
 }
-.faq-item.open .faq-toggle { transform: rotate(45deg); }
-.faq-answer {
+.faq-a {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s, padding 0.3s;
+  transition: max-height 0.4s ease;
+  background: var(--cream);
+}
+.faq-a-inner {
+  padding: 0 24px 24px;
   font-size: 14px;
   line-height: 1.7;
-  color: var(--charcoal);
-}
-.faq-item.open .faq-answer {
-  max-height: 320px;
-  padding-top: 14px;
-}
-
-/* ─────── FINAL CTA ─────── */
-.final-cta {
-  padding: 120px 6%;
-  background: var(--navy-deep);
-  color: var(--cream);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.final-cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(184, 147, 90, 0.16), transparent 60%);
-  z-index: 0;
-}
-.final-cta-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-.final-cta-kicker {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-size: 18px;
-  color: var(--gold-light);
-  margin-bottom: 24px;
-}
-.final-cta h2 {
-  font-size: clamp(36px, 10vw, 60px);
-  color: var(--cream);
-  line-height: 1;
-  margin-bottom: 20px;
-}
-.final-cta h2 .em {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-weight: 300;
-  color: var(--gold-light);
-  text-transform: lowercase;
-}
-.final-cta-sub {
-  font-size: 16px;
-  color: rgba(254, 250, 241, 0.8);
-  margin-bottom: 40px;
-  font-weight: 300;
-}
-.final-cta-buttons {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.btn-cream {
-  background: var(--cream);
-  color: var(--navy);
-  font-size: 13px;
-  padding: 14px 24px;
-}
-.btn-cream:hover {
-  background: white;
-  box-shadow: 0 14px 32px rgba(245, 235, 214, 0.3);
-}
-.btn-ghost {
-  background: transparent;
-  color: var(--cream);
-  border: 1.5px solid var(--gold);
-  font-size: 13px;
-  padding: 14px 24px;
-}
-.btn-ghost:hover {
-  background: var(--gold);
-  color: var(--navy);
 }
 
 /* ─────── FOOTER ─────── */
 footer {
+  padding: 80px 5% 40px;
   background: var(--navy-deep);
-  color: var(--cream);
-  padding: 64px 5% 32px;
-  border-top: 1px solid rgba(184, 147, 90, 0.2);
-}
-.footer-top {
-  max-width: 1240px;
-  margin: 0 auto 32px;
+  color: white;
   text-align: center;
 }
-.footer-logo img {
-  height: 56px;
-  width: auto;
-  margin: 0 auto;
-}
-.footer-tag {
-  font-family: 'Inter';
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(254, 250, 241, 0.5);
-  margin-top: 10px;
-}
-.footer-cols {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 36px;
-  max-width: 1240px;
-  margin: 40px auto;
-  padding-top: 40px;
-  border-top: 1px solid rgba(254, 250, 241, 0.1);
-  text-align: center;
-}
-.footer-col h4 {
-  font-family: 'Bebas Neue';
-  font-size: 12px;
-  letter-spacing: 0.3em;
+.footer-logo { height: 60px; margin-bottom: 24px; }
+.footer-tagline {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 20px;
   color: var(--gold-light);
-  margin-bottom: 18px;
+  margin-bottom: 40px;
 }
-.footer-col a {
-  display: block;
-  color: rgba(254, 250, 241, 0.7);
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+.footer-links a {
+  color: white;
   text-decoration: none;
-  font-size: 13px;
-  margin-bottom: 10px;
-  font-weight: 300;
-  transition: color 0.3s;
-}
-.footer-col a:hover { color: var(--gold-light); }
-.footer-bottom {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding-top: 24px;
-  border-top: 1px solid rgba(254, 250, 241, 0.1);
-  text-align: center;
-}
-.copyright {
-  font-size: 11px;
-  color: rgba(254, 250, 241, 0.5);
-  margin-bottom: 14px;
-  letter-spacing: 0.05em;
-}
-.disclaimer {
   font-family: 'Bebas Neue';
-  font-size: 10px;
-  color: rgba(254, 250, 241, 0.6);
-  letter-spacing: 0.18em;
-  line-height: 1.7;
-  max-width: 900px;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.footer-links a:hover { opacity: 1; }
+
+.footer-legal {
+  font-size: 11px;
+  opacity: 0.4;
+  max-width: 800px;
   margin: 0 auto;
+  line-height: 1.8;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 40px;
 }
 
-/* ═══════ TABLET (700px+) ═══════ */
-@media (min-width: 700px) {
-  nav { padding: 14px 5%; }
-  .nav-logo img { height: 48px; }
+/* ─────── RESPONSIVE ─────── */
+@media (min-width: 768px) {
+  .hero { flex-direction: row; align-items: center; padding-top: 140px; padding-bottom: 100px; }
+  .hero-text { flex: 1.2; }
+  .hero-image-wrap { flex: 0.8; }
+  .who-cards { grid-template-columns: repeat(3, 1fr); }
+  .curriculum-grid { grid-template-columns: repeat(2, 1fr); }
+  .tracks-grid { grid-template-columns: repeat(1, 1fr); max-width: 500px; }
+  .about { grid-template-columns: 1fr 1.2fr; align-items: center; }
   .nav-links { display: flex; }
   .nav-toggle { display: none; }
-
-  .hero {
-    padding: 130px 6% 80px;
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 64px;
-    align-items: center;
-  }
-  .hero h1 { font-size: clamp(56px, 8vw, 96px); }
-  .hero-body { font-size: 17px; max-width: 480px; }
-  .hero-image-wrap { margin-bottom: 0; }
-  .hero-creds {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    margin-top: 24px;
-  }
-  .cred-item {
-    border-bottom: none;
-    padding-bottom: 0;
-    border-right: 1px solid rgba(26, 43, 92, 0.12);
-    padding-right: 12px;
-  }
-  .cred-item:last-child { border-right: none; padding-right: 0; }
-
-  .bio { padding: 130px 6%; }
-  .bio h2 { font-size: clamp(48px, 7vw, 80px); }
-  .bio-body { font-size: 18px; }
-
-  .products { padding: 130px 5% 100px; }
-  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .product-card.featured { grid-column: span 2; padding: 48px 40px; }
-  .product-card.featured .product-name { font-size: 48px; }
-
-  .testimonials { padding: 130px 5%; }
-  .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
-
-  .faq { padding: 130px 5%; }
-  .faq-question { font-size: 20px; }
-
-  .final-cta { padding: 150px 5%; }
-  .final-cta h2 { font-size: clamp(48px, 7vw, 76px); }
-
-  footer { padding: 80px 5% 40px; }
-  .footer-top { text-align: left; }
-  .footer-logo img { margin: 0; }
-  .footer-cols { grid-template-columns: repeat(3, 1fr); gap: 48px; text-align: left; }
 }
 
-/* ═══════ DESKTOP (1024px+) ═══════ */
 @media (min-width: 1024px) {
-  nav { padding: 16px 5%; }
-  .nav-logo img { height: 52px; }
-  .nav-links { gap: 42px; font-size: 14px; }
-
-  .hero {
-    padding: 140px 6% 100px;
-    grid-template-columns: 1.15fr 1fr;
-    gap: 80px;
-    position: relative;
-  }
-  .hero h1 { font-size: clamp(72px, 8vw, 124px); }
-  .hero-body { font-size: 18px; }
-
-  .bio { padding: 160px 8%; }
-  .bio h2 { font-size: clamp(52px, 7vw, 100px); }
-  .bio-body { font-size: 19px; }
-
-  .products { padding: 160px 5% 130px; }
-  .products-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .product-card.featured {
-    grid-column: span 3;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    padding: 64px 60px;
-  }
-  .product-card.featured .product-name { font-size: 60px; }
-  .product-card.featured .product-desc { margin-bottom: 0; }
-  .featured-tracks { margin-bottom: 28px; }
-  .track-item { padding: 22px 26px; }
-  .track-name { font-size: 18px; }
-  .track-price { font-size: 26px; }
-
-  .final-cta { padding: 180px 5%; }
-  .final-cta h2 { font-size: clamp(52px, 7vw, 92px); }
+  .hero { gap: 80px; }
+  .curriculum-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.hero-text { animation: fadeUp 1s ease-out; }
 </style>
 </head>
 <body>
 
-<!-- ────── NAV ────── -->
 <nav>
   <div class="nav-logo">
-    <img src="assets/logo-navy.png" alt="Healing Eyes">
+    <img src="https://images.squarespace-cdn.com/content/v1/6604810651816a3e5e5f0855/e883594e-282a-430c-87a3-5f90378031e4/Healing+Eyes+Logo.png" alt="Healing Eyes">
   </div>
   <ul class="nav-links">
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="/foundation-course.html">Foundation Course</a></li>
-    <li><a href="/academy.html">The Academy</a></li>
+    <li><a href="#who">For You</a></li>
+    <li><a href="#curriculum">Curriculum</a></li>
+    <li><a href="#about">Samantha</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
-  <button class="nav-toggle" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="#enroll" class="nav-cta">Enroll Now</a>
 </nav>
 
-<!-- ────── HERO ────── -->
-<section class="hero" id="home">
+<section class="hero">
   <div class="hero-text">
-    <div class="hero-kicker">Iridology &amp; Sclerology · Since 2021</div>
-    <h1>
-      Everything<br>Your Eyes<br>Reveal.
-      <span class="accent">— eyes don't lie.</span>
-    </h1>
+    <div class="cohort-banner">COHORT 1: JULY 13, 2026</div>
+    <div class="hero-kicker">8-WEEK LIVE TRAINING</div>
+    <h1>The Academy <span class="accent">of iridology & sclerology</span></h1>
     <p class="hero-body">
-      Most people look in the mirror every day and never see what is actually there. Samantha does. And she has helped thousands of people around the world discover what their eyes have been saying.
+      A comprehensive, live certification journey for practitioners, healers, and the health-conscious. Learn to read the map of the body through the eyes with Samantha McGee.
     </p>
-    <a href="#products" class="btn">Work With Samantha</a>
+    <a href="#enroll" class="btn btn-large">View the Training</a>
+    <a href="#about" class="hero-secondary-link">Meet your guide →</a>
   </div>
-  <div>
-    <div class="hero-image-wrap">
-      <img class="hero-image" src="assets/iris-hero.jpg" alt="Macro iris showing fiber detail and pigment markers">
-    </div>
-    <div class="hero-creds">
-      <div class="cred-item">
-        <div class="cred-label">IRIDOLOGIST</div>
-        <div class="cred-sub">Trained &amp; practicing</div>
-      </div>
-      <div class="cred-item">
-        <div class="cred-label">SCLEROLOGIST</div>
-        <div class="cred-sub">Combined methodology</div>
-      </div>
-      <div class="cred-item">
-        <div class="cred-label">SINCE 2021</div>
-        <div class="cred-sub">Five years in</div>
-      </div>
-    </div>
+  <div class="hero-image-wrap">
+    <img src="https://images.squarespace-cdn.com/content/v1/6604810651816a3e5e5f0855/38159670-652a-4720-9118-e3f4268e3789/HEAL-02.jpg" alt="Iridology Close-up" class="hero-image">
   </div>
 </section>
 
-<!-- ────── BIO ────── -->
-<section class="bio">
-  <img class="bio-bg" src="assets/iris-bio-bg.jpg" alt="">
-  <div class="bio-overlay"></div>
-  <div class="bio-content">
-    <div class="bio-kicker">— a note from Samantha</div>
-    <h2>Five years of <span class="em">quiet practice.</span><br>Then the world found her.</h2>
-    <div class="bio-body">
-      <p><strong>Samantha has been practicing iridology and sclerology since 2021.</strong> Trained under a certified iridologist, she developed her own methodology combining both disciplines. Since starting Healing Eyes, she has completed thousands of readings for clients across the USA, Australia, South Africa, and beyond.</p>
-      <p>This is not a trend. This is five years of quiet, dedicated practice — finally meeting an audience that's ready to listen.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ────── PRODUCTS ────── -->
-<section class="products" id="products">
+<section id="who" class="who">
   <div class="section-header">
-    <div class="section-kicker">— Work With Samantha</div>
-    <h2>Where to Begin</h2>
-    <p>Pick the path that fits where you are. Move up the ladder when you're ready.</p>
+    <div class="section-kicker">IS THIS FOR YOU?</div>
+    <h2>For the <span class="em">curious & the professional</span></h2>
+    <p>Whether you're starting from zero or adding a powerful diagnostic tool to your existing practice.</p>
   </div>
-  <div class="products-grid">
-    <div class="product-card">
-      <div class="product-tier">Tier 0 · Self-Guided</div>
-      <h3 class="product-name">The Eye Type Guide</h3>
-      <div class="product-divider"></div>
-      <p class="product-desc">Discover your eye color, fiber pattern, and personality blueprint. A complete starter guide. Instant download.</p>
-      <div class="product-price">$27</div>
-      <a href="#" class="product-cta">Buy Now</a>
+  
+  <div class="who-cards">
+    <div class="who-card">
+      <div class="who-card-num">01</div>
+      <h3>Aspiring Readers</h3>
+      <p>You have no background in health but a deep fascination with the eyes. You want to learn a skill that allows you to see what others miss.</p>
     </div>
-    <div class="product-card">
-      <div class="product-tier">Tier 1 · Self-Guided</div>
-      <h3 class="product-name">Body Systems Library</h3>
-      <div class="product-divider"></div>
-      <p class="product-desc">14 systems fully mapped. Every system broken down — what burdens it, how to support it. 220+ pages.</p>
-      <div class="product-price">$47</div>
-      <a href="#" class="product-cta">Buy Now</a>
+    <div class="who-card">
+      <div class="who-card-num">02</div>
+      <h3>Holistic Practitioners</h3>
+      <p>Naturopaths, herbalists, and nutritionists who want a non-invasive way to confirm what their clients' bodies are telling them.</p>
     </div>
-    <div class="product-card">
-      <div class="product-tier">Tier 2 · Personalized</div>
-      <h3 class="product-name">Mini Iris Snapshot</h3>
-      <div class="product-divider"></div>
-      <p class="product-desc">Submit your eye photos. Samantha reads them and sends you a personalized PDF report.</p>
-      <div class="product-price">$67</div>
-      <a href="#" class="product-cta">Book Now</a>
+    <div class="who-card">
+      <div class="who-card-num">03</div>
+      <h3>The Health Conscious</h3>
+      <p>Individuals who want to master their own health and understand their family's genetic predispositions through a new lens.</p>
     </div>
-    <div class="product-card">
-      <div class="product-tier">Tier 3 · Personalized</div>
-      <h3 class="product-name">Video Analysis</h3>
-      <div class="product-divider"></div>
-      <p class="product-desc">A personalized video walkthrough of your eyes. Samantha records and delivers within days.</p>
-      <div class="product-price">$197</div>
-      <a href="#" class="product-cta">Book Now</a>
+  </div>
+</section>
+
+<section id="curriculum" class="curriculum">
+  <div class="section-header">
+    <div class="section-kicker">THE ROADMAP</div>
+    <h2>8 Weeks to <span class="em">mastery</span></h2>
+  </div>
+  
+  <div class="curriculum-grid">
+    <div class="module">
+      <div class="module-num">WEEK 01</div>
+      <h3>Foundations</h3>
+      <p>History, anatomy of the eye, and the philosophy of iridology vs. sclerology.</p>
     </div>
-    <div class="product-card">
-      <div class="product-tier">Tier 4 · Live</div>
-      <h3 class="product-name">Live 1-on-1 Session</h3>
-      <div class="product-divider"></div>
-      <p class="product-desc">One hour with Samantha via Google Meet. Direct access. Your questions, her real-time reading.</p>
-      <div class="product-price">$247</div>
-      <a href="#" class="product-cta">Book Now</a>
+    <div class="module">
+      <div class="module-num">WEEK 02</div>
+      <h3>The Iris Map</h3>
+      <p>Mapping the body onto the iris. Understanding zones and organ placement.</p>
     </div>
-    <div class="product-card">
-      <div class="product-tier">Tier 4.5 · Self-Paced</div>
-      <h3 class="product-name">Foundation Course</h3>
-      <div class="product-divider"></div>
-      <p class="product-desc">Learn to read eyes the way Samantha does. Self-paced video curriculum + complete reference library.</p>
-      <div class="product-price">$347</div>
-      <a href="/foundation-course.html" class="product-cta">Learn More</a>
+    <div class="module">
+      <div class="module-num">WEEK 03</div>
+      <h3>Constitutions</h3>
+      <p>The three main eye types and what they reveal about innate vitality.</p>
     </div>
-    <div class="product-card featured">
-      <div>
-        <div class="product-tier">Tier 5 · The Academy Training</div>
-        <h3 class="product-name">The Healing Eyes <em style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; color: var(--gold-light);">Academy</em></h3>
-        <div class="product-divider"></div>
-        <p class="product-desc">The complete iridology training. 10-week curriculum, physical book mailed to you, weekly assignments, direct access. Three tracks. Cohort 1 begins July 1.</p>
+    <div class="module">
+      <div class="module-num">WEEK 04</div>
+      <h3>Sclerology</h3>
+      <p>Reading the "red lines." Understanding acute stress and current congestion.</p>
+    </div>
+    <div class="module">
+      <div class="module-num">WEEK 05</div>
+      <h3>Digestive Health</h3>
+      <p>The stomach and bowel zones. Seeing the root of systemic health.</p>
+    </div>
+    <div class="module">
+      <div class="module-num">WEEK 06</div>
+      <h3>Nervous System</h3>
+      <p>Stress rings, pupil size, and the autonomic nervous system markers.</p>
+    </div>
+    <div class="module">
+      <div class="module-num">WEEK 07</div>
+      <h3>Case Studies</h3>
+      <p>Live analysis of real eyes. Putting the pieces together into a cohesive story.</p>
+    </div>
+    <div class="module">
+      <div class="module-num">WEEK 08</div>
+      <h3>Practice Build</h3>
+      <p>How to take photos, talk to clients, and build your own iridology practice.</p>
+    </div>
+  </div>
+</section>
+
+<section id="enroll" class="tracks">
+  <div class="section-header">
+    <div class="section-kicker">ENROLLMENT</div>
+    <h2>Join the <span class="em">July 13 Cohort</span></h2>
+    <p>Choose the Group Track for live training, community, and direct access.</p>
+  </div>
+  
+  <div class="tracks-grid">
+    <div class="track-card featured">
+      <div class="track-tier">COHORT 1</div>
+      <h3 class="track-name">Group Track</h3>
+      <p class="track-tagline">The complete 8-week live iridology training with Samantha.</p>
+      
+      <div class="track-price-block">
+        <div class="track-price">$3,000</div>
+        <p class="track-cap">Or 3 monthly payments of $1,166.67</p>
+        <p class="track-cap" style="margin-top: 12px; font-weight: bold; color: var(--gold-light);">ONLY 10 SEATS AVAILABLE</p>
       </div>
-      <div>
-        <div class="featured-tracks">
-          <div class="track-item"><span class="track-name">Self-Paced</span><span class="track-price">$1,997</span></div>
-          <div class="track-item"><span class="track-name">Group Track</span><span class="track-price">$3,500</span></div>
-          <div class="track-item"><span class="track-name">Private Track</span><span class="track-price">$5,000</span></div>
+      
+      <ul class="track-includes">
+        <li>Weekly live Zoom call with Samantha (8 weeks)</li>
+        <li>Private member area open at enrollment</li>
+        <li>Growing video vault — every session recorded</li>
+        <li>Drip-released materials each week</li>
+        <li>Group chat with Samantha and your cohort</li>
+        <li>Physical book + welcome package mailed to you</li>
+        <li>Direct access to Samantha throughout the cohort</li>
+      </ul>
+      
+      <a href="https://link.fastpaydirect.com/payment-link/6a247a0603b17c94f5714ed5" class="track-cta">Enroll Now — $3,000</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="about-image-wrap">
+    <img src="https://images.squarespace-cdn.com/content/v1/6604810651816a3e5e5f0855/1f3f9821-3964-4458-9419-4552e463056a/HEAL-12.jpg" alt="Samantha McGee" class="about-image">
+  </div>
+  <div class="about-content">
+    <div class="section-kicker">YOUR GUIDE</div>
+    <h2>Samantha <span class="em">McGee</span></h2>
+    <p>Samantha is an iridologist and sclerologist who has spent five years practicing and helping people around the world understand their health through the eyes.</p>
+    <p>She founded Healing Eyes to bridge the gap between ancient observational wisdom and modern holistic health. This Academy is the culmination of her years of clinical practice, designed to pass on the torch to the next generation of readers.</p>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="section-header">
+    <div class="section-kicker">QUESTIONS</div>
+    <h2>Common <span class="em">Inquiries</span></h2>
+  </div>
+  
+  <div class="faq-grid">
+    <div class="faq-item">
+      <button class="faq-q">
+        <h4>What if I miss a live call?</h4>
+        <span>+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Every session is recorded and uploaded to your private video vault within 24 hours. You can watch the replay and ask questions in the group chat at any time.
         </div>
-        <a href="/academy.html" class="track-cta">Apply for Cohort 1 →</a>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-q">
+        <h4>Is there a payment plan?</h4>
+        <span>+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Yes. You can choose to pay in full for $3,000 or select the 3-month payment plan of $1,166.67 at checkout.
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-q">
+        <h4>What is the refund policy?</h4>
+        <span>+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          We offer a full refund within 14 days of purchase or anytime before the first call on July 13, 2026, whichever comes first. Once the cohort begins, all sales are final.
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-q">
+        <h4>Do I need special equipment?</h4>
+        <span>+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          A smartphone with a good camera is enough to get started. We will discuss professional iris cameras and lighting in Week 8, but they are not required to complete the training.
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ────── TESTIMONIALS ────── -->
-<section class="testimonials">
-  <div class="section-header">
-    <div class="section-kicker">— Real Eyes, Real Stories</div>
-    <h2>What People Say</h2>
-    <p>Three readings. From around the world. One pattern: people see themselves more clearly.</p>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testimonial">
-      <p class="testimonial-text">She told me things about my body I had been feeling for months but couldn't put into words. The reading gave me language for what I already knew.</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">KH</div>
-        <div><div class="testimonial-name">K.H.</div><div class="testimonial-loc">United States</div></div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <p class="testimonial-text">I've had readings before but Samantha sees things others miss. She combines iridology and sclerology in a way that just makes sense.</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">M</div>
-        <div><div class="testimonial-name">Mel</div><div class="testimonial-loc">Australia</div></div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <p class="testimonial-text">The video reading was so detailed. I went back and watched it three times. Every time I see something new I missed.</p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">S</div>
-        <div><div class="testimonial-name">Shelly</div><div class="testimonial-loc">South Africa</div></div>
-      </div>
-    </div>
-  </div>
+<section style="padding: 100px 5%; background: var(--navy); color: white; text-align: center;">
+  <div class="section-kicker" style="color: var(--gold-light);">READY TO BEGIN?</div>
+  <h2 style="color: white; font-size: clamp(32px, 8vw, 56px); margin-bottom: 40px;">Secure your seat in <span class="em" style="color: var(--gold-light);">Cohort 1</span></h2>
+  <a href="https://link.fastpaydirect.com/payment-link/6a247a0603b17c94f5714ed5" class="btn btn-cream btn-large">Enroll Now — $3,000</a>
 </section>
 
-<!-- ────── FAQ ────── -->
-<section class="faq">
-  <div class="section-header">
-    <div class="section-kicker">— Real Questions, Real Answers</div>
-    <h2>Before You Begin</h2>
-    <p>Everything you want to know before working with Samantha.</p>
-  </div>
-  <div class="faq-wrap">
-    <div class="faq-item"><div class="faq-question">What is iridology and sclerology? <span class="faq-toggle">+</span></div><div class="faq-answer">Iridology reads patterns and markers in the iris. Sclerology reads the white of the eye. Combined, they reveal patterns about the body's systems, stress, and ancestry. They are not diagnostic tools — they're educational mirrors.</div></div>
-    <div class="faq-item"><div class="faq-question">Is this a medical diagnosis? <span class="faq-toggle">+</span></div><div class="faq-answer">No. Iridology and sclerology are not diagnostic tools and are not a substitute for medical care. Samantha is an iridologist, not a doctor. The work is educational, observational, and supportive — never prescriptive.</div></div>
-    <div class="faq-item"><div class="faq-question">Is Samantha certified? <span class="faq-toggle">+</span></div><div class="faq-answer">Samantha trained under a certified iridologist and chose not to pursue formal certification herself. She's been practicing since 2021 and has read thousands of eyes. Her methodology is her own — built from training, practice, and five years of client work.</div></div>
-    <div class="faq-item"><div class="faq-question">How do I send my eye photos? <span class="faq-toggle">+</span></div><div class="faq-answer">After purchasing, you'll receive an email with photo guidelines and a secure upload link. Most clients use their phone camera in good natural light. We provide examples of what makes a good photo.</div></div>
-    <div class="faq-item"><div class="faq-question">How long does it take to get everything back to me? <span class="faq-toggle">+</span></div><div class="faq-answer">Snapshots are typically delivered within 3-5 business days. Video Analyses within 5-7 business days. Live Sessions are scheduled at the time of booking.</div></div>
-    <div class="faq-item"><div class="faq-question">What's the difference between the Snapshot, Video, and Live Session? <span class="faq-toggle">+</span></div><div class="faq-answer">The Snapshot is a written PDF reading of your eye photos. The Video is a recorded walkthrough where Samantha talks through what she sees. The Live Session is a 60-minute video call with real-time interaction and questions.</div></div>
-    <div class="faq-item"><div class="faq-question">Do you offer refunds? <span class="faq-toggle">+</span></div><div class="faq-answer">Digital products and completed readings are non-refundable. Live sessions can be rescheduled <strong>ONE TIME</strong> with 24-hour notice.</div></div>
-  </div>
-</section>
-
-<!-- ────── FINAL CTA ────── -->
-<section class="final-cta">
-  <div class="final-cta-inner">
-    <div class="final-cta-kicker">— ready to begin?</div>
-    <h2>Your Eyes Have Been<br><span class="em">telling a story.</span></h2>
-    <p class="final-cta-sub">Pick where to begin. The rest unfolds from there.</p>
-    <div class="final-cta-buttons">
-      <a href="#" class="btn btn-cream">Get the Eye Type Guide — $27</a>
-      <a href="#" class="btn btn-ghost">Book a Live Session — $247</a>
-    </div>
-  </div>
-</section>
-
-<!-- ────── FOOTER ────── -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-logo"><img src="assets/logo-white.png" alt="Healing Eyes"></div>
-    <div class="footer-tag">Iridology &amp; Sclerology</div>
+  <img src="https://images.squarespace-cdn.com/content/v1/6604810651816a3e5e5f0855/e883594e-282a-430c-87a3-5f90378031e4/Healing+Eyes+Logo.png" alt="Healing Eyes" class="footer-logo" style="filter: brightness(0) invert(1);">
+  <div class="footer-tagline">Iridology & Sclerology</div>
+  
+  <div class="footer-links">
+    <a href="https://stan.store/healingeyes">Readings & Guides →</a>
+    <a href="#">Reach Samantha on TikTok</a>
+    <a href="#">Legal</a>
   </div>
-  <div class="footer-cols">
-    <div class="footer-col">
-      <h4>Healing Eyes</h4>
-      <a href="/index.html">About Samantha</a>
-      <a href="/index.html">The Story</a>
-      <a href="/academy.html">The Academy</a>
-    </div>
-    <div class="footer-col">
-      <h4>Work With Samantha</h4>
-      <a href="#">Eye Type Guide ($27)</a>
-      <a href="#">Body Systems Library ($47)</a>
-      <a href="#">Mini Iris Snapshot ($67)</a>
-      <a href="#">Video Analysis ($197)</a>
-      <a href="#">Live 1-on-1 Session ($247)</a>
-      <a href="#">Foundation Course ($347)</a>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <a href="#">Reach Samantha on TikTok</a>
-      <a href="#">Legal</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="copyright">© 2026 Healing Eyes. All Rights Reserved.</div>
-    <div class="disclaimer">Iridology and sclerology are not diagnostic tools and are not a substitute for medical care. Information provided by Healing Eyes is for educational purposes only.</div>
+  
+  <div class="footer-legal">
+    <p>© 2026 Healing Eyes. All rights reserved.</p>
+    <p>Disclaimer: Iridology and sclerology are observational tools for health education and do not constitute medical diagnosis or treatment. Always consult with a licensed healthcare professional for medical concerns.</p>
   </div>
 </footer>
 
 <script>
-document.querySelectorAll('.faq-item').forEach(item => {
-  item.addEventListener('click', () => item.classList.toggle('open'));
+// FAQ Toggle
+document.querySelectorAll('.faq-q').forEach(button => {
+  button.addEventListener('click', () => {
+    const faqItem = button.parentElement;
+    const isOpen = faqItem.classList.contains('active');
+    
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.classList.remove('active');
+      item.querySelector('.faq-a').style.maxHeight = null;
+      item.querySelector('span').textContent = '+';
+    });
+    
+    if (!isOpen) {
+      faqItem.classList.add('active');
+      const answer = faqItem.querySelector('.faq-a');
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      button.querySelector('span').textContent = '-';
+    }
+  });
+});
+
+// Mobile Nav Toggle (Simple)
+const navToggle = document.createElement('button');
+navToggle.className = 'nav-toggle';
+navToggle.innerHTML = '<span></span><span></span><span></span>';
+document.querySelector('nav').insertBefore(navToggle, document.querySelector('.nav-cta'));
+
+navToggle.addEventListener('click', () => {
+  const links = document.querySelector('.nav-links');
+  links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+  links.style.flexDirection = 'column';
+  links.style.position = 'absolute';
+  links.style.top = '100%';
+  links.style.left = '0';
+  links.style.right = '0';
+  links.style.background = 'var(--cream)';
+  links.style.padding = '20px';
+  links.style.borderBottom = '1px solid var(--navy)';
 });
 </script>
 
