@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Policies — Healing Eyes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FBF6E9;
+  --cream-deep: #F5EBD6;
+  --ivory: #FEFAF1;
+  --navy: #1A2B5C;
+  --navy-deep: #0F1B3D;
+  --sage: #7BB99F;
+  --sage-deep: #5A9479;
+  --charcoal: #2A2A2A;
+  --gold: #B8935A;
+  --gold-light: #D4B68A;
+  --rust: #B85C3A;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.7;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  font-weight: normal;
+  line-height: 1;
+}
+
+/* NAV */
+nav {
+  background: rgba(251, 246, 233, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(26, 43, 92, 0.06);
+  padding: 14px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo img { height: 48px; width: auto; }
+.nav-back {
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: var(--navy);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-back:hover { color: var(--sage-deep); }
+
+/* HEADER */
+.legal-header {
+  background: var(--navy-deep);
+  color: var(--cream);
+  padding: 70px 6% 56px;
+  text-align: center;
+}
+.legal-header .kicker {
+  font-family: 'Bebas Neue';
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  color: var(--gold-light);
+  margin-bottom: 16px;
+}
+.legal-header h1 {
+  font-size: clamp(40px, 10vw, 60px);
+  color: var(--cream);
+  line-height: 1;
+}
+.legal-header .updated {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(254, 250, 241, 0.7);
+  margin-top: 16px;
+}
+
+/* BODY */
+.legal-body {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 64px 6% 90px;
+}
+.legal-section { margin-bottom: 48px; }
+.legal-section:last-child { margin-bottom: 0; }
+.legal-section h2 {
+  font-size: 26px;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+.legal-section .section-rule {
+  width: 36px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 0 20px;
+}
+.legal-section h3 {
+  font-family: 'Bebas Neue';
+  font-size: 16px;
+  color: var(--navy);
+  letter-spacing: 0.08em;
+  margin: 24px 0 10px;
+}
+.legal-section p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--charcoal);
+  margin-bottom: 14px;
+}
+.legal-section ul {
+  margin: 0 0 16px;
+  padding-left: 0;
+  list-style: none;
+}
+.legal-section li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--charcoal);
+  padding: 7px 0 7px 22px;
+  position: relative;
+}
+.legal-section li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+.legal-section strong { font-weight: 500; color: var(--navy); }
+
+/* REFUND HIGHLIGHT */
+.refund-box {
+  background: var(--ivory);
+  border-left: 4px solid var(--gold);
+  padding: 24px 28px;
+  margin: 18px 0;
+}
+.refund-box p { margin-bottom: 10px; }
+.refund-box p:last-child { margin-bottom: 0; }
+
+/* DISCLAIMER BOX */
+.disclaimer-box {
+  background: var(--cream-deep);
+  border: 1px solid rgba(184, 147, 90, 0.4);
+  padding: 24px 28px;
+  margin: 18px 0;
+}
+.disclaimer-box p {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--charcoal);
+  margin-bottom: 0;
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy-deep);
+  color: var(--cream);
+  padding: 40px 5% 32px;
+  border-top: 1px solid rgba(184, 147, 90, 0.2);
+  text-align: center;
+}
+.footer-tag {
+  font-family: 'Inter';
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(254, 250, 241, 0.5);
+  margin-bottom: 12px;
+}
+.footer-link {
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  color: var(--gold-light);
+  text-decoration: none;
+}
+.copyright {
+  font-size: 11px;
+  color: rgba(254, 250, 241, 0.5);
+  margin-top: 16px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="assets/logo-navy.png" alt="Healing Eyes"></div>
+  <a href="index.html" class="nav-back">← Back to Site</a>
+</nav>
+
+<header class="legal-header">
+  <div class="kicker">— HEALING EYES</div>
+  <h1>Terms &amp; Policies</h1>
+  <div class="updated">Last updated: June 2026</div>
+</header>
+
+<main class="legal-body">
+
+  <div class="legal-section">
+    <h2>Agreement to Terms</h2>
+    <div class="section-rule"></div>
+    <p>These Terms &amp; Policies govern your purchase of and participation in programs and services offered by Healing Eyes ("we," "us," "our"), including the Healing Eyes Academy. By enrolling in or purchasing any program, you agree to these terms. Please read them carefully before purchasing.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>The Healing Eyes Academy</h2>
+    <div class="section-rule"></div>
+    <p>The Healing Eyes Academy is an 8-week live cohort program in iridology and sclerology led by Samantha, an iridologist and sclerologist. Cohort 1 begins July 13, 2026.</p>
+    <h3>What Enrollment Includes</h3>
+    <ul>
+      <li>A weekly live Zoom call with Samantha across the 8-week cohort</li>
+      <li>Access to a private member area, opened at enrollment</li>
+      <li>A growing video vault of recorded sessions</li>
+      <li>Drip-released learning materials each week</li>
+      <li>Group chat access with Samantha and your cohort</li>
+      <li>A physical book and welcome package mailed to you</li>
+      <li>Direct access to Samantha throughout the cohort</li>
+    </ul>
+    <h3>Seats &amp; Scheduling</h3>
+    <p>Cohort 1 is limited to 10 seats. Session days and times are communicated through the member area. Live sessions are recorded and made available in the video vault, so missing a live call does not mean missing the material.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>Pricing &amp; Payment</h2>
+    <div class="section-rule"></div>
+    <p>The Academy is offered at <strong>$3,000 paid in full</strong>, or through a <strong>3-month payment plan of $1,166.67 per month ($3,500 total)</strong>. Your seat is secured once your first payment is processed. Payment-plan installments are billed automatically each month. Payments are processed through a third-party payment processor; by purchasing, you also agree to that processor's terms.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>Refund Policy</h2>
+    <div class="section-rule"></div>
+    <div class="refund-box">
+      <p><strong>You may request a full refund within 14 days of purchase, or any time before the first cohort call on July 13, 2026 — whichever comes first.</strong></p>
+      <p>After the cohort begins, all sales are final and no refunds will be issued.</p>
+      <p>If you are on the payment plan and cancel within the refund window, any payments already charged will be refunded and all future scheduled payments will be stopped. After the refund window closes, payment-plan participants remain responsible for the full balance.</p>
+    </div>
+    <p>To request a refund within the eligible window, contact Healing Eyes through the messaging channel Samantha used to reach you, or reply to your purchase receipt.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>Medical Disclaimer</h2>
+    <div class="section-rule"></div>
+    <div class="disclaimer-box">
+      <p>Iridology and sclerology are not diagnostic tools and are not a substitute for professional medical care, diagnosis, or treatment. All information, programs, and materials provided by Healing Eyes are for educational purposes only. Nothing offered by Healing Eyes is intended to diagnose, treat, cure, or prevent any disease or health condition. Always consult a qualified healthcare provider regarding any medical concern.</p>
+    </div>
+  </div>
+
+  <div class="legal-section">
+    <h2>Intellectual Property</h2>
+    <div class="section-rule"></div>
+    <p>All program content — including videos, recordings, written materials, the member area, and the physical book and welcome package — is the intellectual property of Healing Eyes and is provided for your personal use only. You may not record, copy, redistribute, resell, or share program materials or access with others. Sharing your member-area access or course materials is grounds for removal from the program without refund.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>Participant Conduct</h2>
+    <div class="section-rule"></div>
+    <p>The Academy is a small, live cohort. We ask all participants to engage respectfully with Samantha and fellow students. We reserve the right to remove any participant whose conduct is disruptive, abusive, or harmful to the cohort, at our discretion.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>Limitation of Liability</h2>
+    <div class="section-rule"></div>
+    <p>Participation in the Academy and use of any Healing Eyes materials is at your own discretion and risk. To the fullest extent permitted by law, Healing Eyes is not liable for any decisions, actions, or outcomes resulting from participation in the program or reliance on its content. Results vary by individual and are not guaranteed.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>Changes to These Terms</h2>
+    <div class="section-rule"></div>
+    <p>We may update these Terms &amp; Policies from time to time. The version in effect at the time of your purchase governs that purchase. Material changes will be reflected by the "Last updated" date above.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2>Contact</h2>
+    <div class="section-rule"></div>
+    <p>Questions about these terms, your enrollment, or a refund request can be directed to Healing Eyes through the channel Samantha used to contact you, or by replying to your purchase receipt.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-tag">Iridology &amp; Sclerology</div>
+  <a href="index.html" class="footer-link">healingeyesholistic.com</a>
+  <div class="copyright">© 2026 Healing Eyes. All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
