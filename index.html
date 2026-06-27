@@ -226,6 +226,105 @@ nav {
   box-shadow: 0 16px 40px rgba(15, 27, 61, 0.15);
 }
 
+/* ─────── THE READINGS ─────── */
+.readings {
+  padding: 100px 5%;
+  background: var(--cream);
+}
+.reading-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.reading-card {
+  background: var(--ivory);
+  border: 1px solid var(--navy);
+  padding: 34px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.4s;
+}
+.reading-card::before {
+  content: "";
+  position: absolute;
+  top: 14px; left: 14px; right: 14px; bottom: 14px;
+  border: 1px solid rgba(184, 147, 90, 0);
+  pointer-events: none;
+  transition: border-color 0.4s;
+}
+.reading-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(15, 27, 61, 0.1); }
+.reading-card:hover::before { border-color: rgba(184, 147, 90, 0.4); }
+.reading-tier {
+  font-family: 'Bebas Neue';
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  color: var(--sage-deep);
+  margin-bottom: 12px;
+}
+.reading-name {
+  font-family: 'Bebas Neue';
+  font-size: 28px;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.reading-price {
+  font-family: 'Bebas Neue';
+  font-size: 46px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.reading-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--charcoal);
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+.reading-card.featured {
+  background: var(--navy);
+  border-color: var(--gold);
+}
+.reading-card.featured::before { display: none; }
+.reading-card.featured::after {
+  content: "DIRECT ACCESS";
+  position: absolute;
+  top: -12px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.25em;
+  font-size: 11px;
+  padding: 6px 18px;
+  white-space: nowrap;
+}
+.reading-card.featured .reading-tier { color: var(--gold-light); }
+.reading-card.featured .reading-name { color: var(--cream); }
+.reading-card.featured .reading-price { color: var(--gold-light); }
+.reading-card.featured .reading-desc { color: rgba(254, 250, 241, 0.9); }
+.reading-card.featured .track-cta { background: var(--gold); color: var(--navy); }
+.reading-card.featured .track-cta:hover { background: var(--cream); }
+.readings-bridge {
+  text-align: center;
+  max-width: 720px;
+  margin: 56px auto 0;
+  padding-top: 36px;
+  border-top: 1px solid rgba(26, 43, 92, 0.12);
+}
+.readings-bridge .em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--rust);
+}
+.readings-bridge p { font-size: 15px; color: var(--charcoal); margin-top: 6px; }
+
 /* ─────── WHO THIS IS FOR ─────── */
 .who {
   padding: 100px 5%;
@@ -958,6 +1057,9 @@ footer {
   .hero h1 { font-size: clamp(54px, 7vw, 80px); }
   .hero-body { font-size: 17px; max-width: 480px; }
 
+  .readings { padding: 130px 5%; }
+  .reading-cards { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+
   .who { padding: 130px 5%; }
   .who-cards { grid-template-columns: repeat(3, 1fr); }
 
@@ -1022,6 +1124,10 @@ footer {
 <!-- ────── NAV ────── -->
 <nav>
   <div class="nav-logo"><img src="assets/logo-navy.png" alt="Healing Eyes"></div>
+  <ul class="nav-links">
+    <li><a href="#readings">Readings</a></li>
+    <li><a href="#enroll">The Academy</a></li>
+  </ul>
   <a href="#enroll" class="nav-cta">Enroll</a>
 </nav>
 
@@ -1038,12 +1144,58 @@ footer {
       The complete iridology training. Eight weeks of live weekly sessions with Samantha, a physical book and welcome package mailed to you, drip-released materials each week, and direct access throughout the cohort. Cohort 1 begins July 13, 2026.
     </p>
     <a href="#enroll" class="btn">Enroll Now</a>
-    <a href="#enroll" class="hero-secondary-link">— or see what's included ↓</a>
+    <a href="#readings" class="hero-secondary-link">— or get a reading first ↓</a>
   </div>
   <div>
     <div class="hero-image-wrap">
       <img class="hero-image" src="assets/foundation-hero.jpg" alt="Iridology study journal with handwritten notes and framed iris photograph">
     </div>
+  </div>
+</section>
+
+<!-- ────── THE READINGS ────── -->
+<section class="readings" id="readings">
+  <div class="section-header">
+    <div class="section-kicker">— Real Eyes, Real Readings</div>
+    <h2>Start with <span class="em">your</span> eyes.</h2>
+    <p>Have Samantha read what your eyes have been saying — personally, by hand.</p>
+  </div>
+  <p class="who-intro">
+    Three ways to work with Samantha directly, from a quick written snapshot to an hour together, live. Every reading draws on five years of practice and thousands of readings for people around the world.
+  </p>
+  <div class="reading-cards">
+
+    <!-- MINI IRIS SNAPSHOT -->
+    <div class="reading-card">
+      <div class="reading-tier">QUICK INSIGHT</div>
+      <div class="reading-name">Mini Iris Snapshot</div>
+      <div class="reading-price">$37</div>
+      <div class="reading-desc">Send your eye photos and Samantha reads them personally, then sends back a written snapshot of what she sees. The fastest way to get real eyes on yours.</div>
+      <a href="https://link.fastpaydirect.com/payment-link/6a3ed0f4390a6e280643ad5f" class="track-cta">Get Your Snapshot</a>
+    </div>
+
+    <!-- PERSONALIZED VIDEO REPORT -->
+    <div class="reading-card">
+      <div class="reading-tier">DEEP PERSONAL READING</div>
+      <div class="reading-name">Personalized Video Report</div>
+      <div class="reading-price">$150</div>
+      <div class="reading-desc">Samantha records a full video walking through your iris in detail — color, fibers, markers, and what they reveal — so you can watch it back as many times as you need.</div>
+      <a href="https://link.fastpaydirect.com/payment-link/6a3ed133390a6e280643ad61" class="track-cta">Book Your Report</a>
+    </div>
+
+    <!-- LIVE 1-ON-1 SESSION -->
+    <div class="reading-card featured">
+      <div class="reading-tier">FACE TO FACE</div>
+      <div class="reading-name">Live 1-on-1 Session</div>
+      <div class="reading-price">$175</div>
+      <div class="reading-desc">Sit with Samantha live over Zoom and go through your eyes together, in real time. Ask anything. Pick a time from her current availability.</div>
+      <a href="https://link.fastpaydirect.com/payment-link/6a3ecaca9b12592b36824ba3" class="track-cta">Book Your Session</a>
+    </div>
+
+  </div>
+  <div class="readings-bridge">
+    <span class="em">Want to read eyes yourself?</span>
+    <p>Keep scrolling — the Healing Eyes Academy is where you learn the craft. ↓</p>
   </div>
 </section>
 
@@ -1234,7 +1386,7 @@ footer {
   <div class="footer-cols">
     <div class="footer-col">
       <h4>Connect</h4>
-      <a href="https://stan.store/healingeyes">Readings &amp; Guides →</a>
+      <a href="#readings">Readings →</a>
       <a href="https://www.tiktok.com/@healingeyesholistics">Reach Samantha on TikTok</a>
       <a href="legal.html">Legal</a>
     </div>
