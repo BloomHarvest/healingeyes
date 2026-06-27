@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Your Healing Eyes Reading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FBF6E9;
+  --cream-deep: #F5EBD6;
+  --ivory: #FEFAF1;
+  --navy: #1A2B5C;
+  --navy-deep: #0F1B3D;
+  --sage: #7BB99F;
+  --sage-deep: #5A9479;
+  --charcoal: #2A2A2A;
+  --gold: #B8935A;
+  --gold-light: #D4B68A;
+  --rust: #B85C3A;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.6;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  font-weight: normal;
+  line-height: 1;
+}
+
+/* NAV */
+nav {
+  background: rgba(251, 246, 233, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(26, 43, 92, 0.06);
+  padding: 14px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-logo img { height: 48px; width: auto; }
+
+/* HERO CONFIRM */
+.confirm {
+  flex-grow: 1;
+  background: var(--navy-deep);
+  color: var(--cream);
+  padding: 80px 6%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.confirm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top center, rgba(184, 147, 90, 0.2), transparent 60%);
+  z-index: 0;
+}
+.confirm-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.confirm-check {
+  width: 72px;
+  height: 72px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  font-size: 32px;
+  color: var(--gold-light);
+  animation: pop 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.4);
+}
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+.confirm-kicker {
+  font-family: 'Bebas Neue';
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  color: var(--gold-light);
+  margin-bottom: 18px;
+}
+.confirm h1 {
+  font-size: clamp(40px, 11vw, 68px);
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.confirm h1 .em {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+  text-transform: lowercase;
+}
+.confirm-sub {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 19px;
+  color: rgba(254, 250, 241, 0.85);
+  margin-bottom: 48px;
+  line-height: 1.5;
+}
+
+/* NEXT STEPS */
+.steps {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+}
+.steps-title {
+  font-family: 'Bebas Neue';
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+  text-align: center;
+  margin-bottom: 28px;
+}
+.step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(184, 147, 90, 0.2);
+}
+.step:last-child { border-bottom: none; }
+.step-num {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-size: 36px;
+  color: var(--gold);
+  line-height: 1;
+  text-align: center;
+}
+.step-text h3 {
+  font-family: 'Bebas Neue';
+  font-size: 19px;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+.step-text p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(254, 250, 241, 0.82);
+}
+
+/* ATTENTION BOX */
+.attention {
+  max-width: 640px;
+  margin: 40px auto 0;
+  background: rgba(184, 147, 90, 0.12);
+  border: 1px solid var(--gold);
+  padding: 24px 26px;
+  text-align: center;
+}
+.attention strong {
+  font-family: 'Bebas Neue';
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--gold-light);
+  display: block;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.attention p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(254, 250, 241, 0.9);
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy-deep);
+  color: var(--cream);
+  padding: 32px 5%;
+  border-top: 1px solid rgba(184, 147, 90, 0.2);
+  text-align: center;
+}
+.footer-tag {
+  font-family: 'Inter';
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(254, 250, 241, 0.5);
+  margin-bottom: 12px;
+}
+.disclaimer {
+  font-family: 'Bebas Neue';
+  font-size: 10px;
+  color: rgba(254, 250, 241, 0.55);
+  letter-spacing: 0.18em;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 700px) {
+  .confirm { padding: 110px 6%; }
+  .confirm-check { width: 84px; height: 84px; font-size: 38px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="assets/logo-navy.png" alt="Healing Eyes"></div>
+</nav>
+
+<section class="confirm">
+  <div class="confirm-inner">
+    <div class="confirm-check">✦</div>
+    <div class="confirm-kicker">PAYMENT CONFIRMED</div>
+    <h1>Thank You. <span class="em">your reading is on its way.</span></h1>
+    <p class="confirm-sub">
+      Samantha will personally read your eyes. Here's how to get her your photos.
+    </p>
+
+    <div class="steps">
+      <div class="steps-title">— WHAT HAPPENS NEXT</div>
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-text">
+          <h3>Check Your Email</h3>
+          <p>We've just emailed you a photo guide and your private submission link. Check your inbox — and your spam or promotions folder, just in case.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-text">
+          <h3>Take Your Photos</h3>
+          <p>Follow the guide to photograph your eyes clearly. You'll need 10 photos in total — 5 of your left eye and 5 of your right.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-text">
+          <h3>Submit Them</h3>
+          <p>Upload your photos through the link in your email, and add anything you'd like Samantha to know before your reading.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-text">
+          <h3>Samantha Reviews &amp; Delivers</h3>
+          <p>She personally reviews every submission. If a photo needs a quick retake, she'll email you. Then she gets to work on your reading.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="attention">
+      <strong>★ CHECK YOUR INBOX NOW</strong>
+      <p>Your photo guide and submission link are in your email. If you don't see them within a few minutes, check your spam or promotions folder — or reach Samantha on TikTok.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-tag">Iridology &amp; Sclerology</div>
+  <div class="disclaimer">Iridology and sclerology are not diagnostic tools and are not a substitute for medical care. Information provided by Healing Eyes is for educational purposes only.</div>
+</footer>
+
+</body>
+</html>
