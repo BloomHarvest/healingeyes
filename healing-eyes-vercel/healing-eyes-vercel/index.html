@@ -45,10 +45,46 @@ h1, h2, h3, h4 {
   line-height: 1;
 }
 
+/* ─────── AMAZON STOREFRONT BAR ─────── */
+.amazon-bar {
+  background: var(--navy);
+  text-align: center;
+  padding: 10px 16px;
+  position: relative;
+  z-index: 200;
+}
+.amazon-bar a {
+  color: var(--cream);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.amazon-bar a .shop-arrow {
+  color: var(--gold-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.amazon-bar a:hover .shop-arrow { color: var(--cream); }
+.amazon-bar .ftc {
+  display: block;
+  font-size: 10px;
+  color: var(--gold);
+  margin-top: 3px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
 /* ─────── NAV ─────── */
 nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  position: sticky;
+  top: 0;
   z-index: 100;
   background: rgba(251, 246, 233, 0.94);
   backdrop-filter: blur(14px);
@@ -90,14 +126,14 @@ nav {
   font-size: 13px;
   transition: all 0.3s;
 }
-.nav-cta::after { content: "→"; font-family: 'Inter', sans-serif; transition: transform 0.3s; }
+.nav-cta::after { content: "\2192"; font-family: 'Inter', sans-serif; transition: transform 0.3s; }
 .nav-cta:hover { background: var(--sage-deep); transform: translateY(-1px); }
 .nav-cta:hover::after { transform: translateX(4px); }
 
 /* ─────── HERO ─────── */
 .hero {
   background: var(--cream);
-  padding: 100px 6% 60px;
+  padding: 60px 6% 60px;
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -184,7 +220,7 @@ nav {
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.btn::after { content: "→"; font-family: 'Inter', sans-serif; transition: transform 0.4s; }
+.btn::after { content: "\2192"; font-family: 'Inter', sans-serif; transition: transform 0.4s; }
 .btn:hover { background: var(--sage-deep); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(91, 148, 121, 0.3); }
 .btn:hover::after { transform: translateX(6px); }
 .btn-large { padding: 22px 44px; font-size: 16px; }
@@ -612,7 +648,7 @@ nav {
 .track-card.featured .track-includes li { color: rgba(254, 250, 241, 0.92); }
 
 .track-includes li::before {
-  content: "✓";
+  content: "\2713";
   color: var(--sage-deep);
   font-weight: 700;
   flex-shrink: 0;
@@ -1048,7 +1084,7 @@ footer {
   .nav-toggle { display: none; }
 
   .hero {
-    padding: 130px 6% 80px;
+    padding: 80px 6% 80px;
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     gap: 64px;
@@ -1094,7 +1130,7 @@ footer {
   .nav-links { gap: 42px; font-size: 14px; }
 
   .hero {
-    padding: 140px 6% 100px;
+    padding: 100px 6% 100px;
     grid-template-columns: 1.15fr 1fr;
     gap: 80px;
     position: relative;
@@ -1121,6 +1157,14 @@ footer {
 </head>
 <body>
 
+<!-- ────── AMAZON STOREFRONT BAR ────── -->
+<div class="amazon-bar">
+  <a href="https://www.amazon.com/shop/healingeyes" target="_blank" rel="noopener sponsored">
+    🛍️ Shop Samantha's Holistic Picks on Amazon <span class="shop-arrow">Browse the storefront →</span>
+  </a>
+  <span class="ftc">As an Amazon Associate, Healing Eyes earns from qualifying purchases.</span>
+</div>
+
 <!-- ────── NAV ────── -->
 <nav>
   <div class="nav-logo"><img src="assets/logo-navy.png" alt="Healing Eyes"></div>
@@ -1134,14 +1178,14 @@ footer {
 <!-- ────── HERO ────── -->
 <section class="hero" id="top">
   <div class="hero-text">
-    <div class="cohort-banner">COHORT 1 · BEGINS JULY 13, 2026</div>
+    <div class="cohort-banner">NEXT COHORT · BEGINS SEPTEMBER 1, 2026</div>
     <div class="hero-kicker">— THE HEALING EYES ACADEMY</div>
     <h1>
       Learn to Read Eyes<br>at Depth.
       <span class="accent">— eight weeks. live. real work.</span>
     </h1>
     <p class="hero-body">
-      The complete iridology training. Eight weeks of live weekly sessions with Samantha, a physical book and welcome package mailed to you, drip-released materials each week, and direct access throughout the cohort. Cohort 1 begins July 13, 2026.
+      The complete iridology training. Eight weeks of live weekly sessions with Samantha, a physical book and welcome package mailed to you, drip-released materials each week, and direct access throughout the cohort. The next cohort begins September 1, 2026.
     </p>
     <a href="#enroll" class="btn">Enroll Now</a>
     <a href="#readings" class="hero-secondary-link">— or get a reading first ↓</a>
@@ -1188,7 +1232,7 @@ footer {
       <div class="reading-tier">FACE TO FACE</div>
       <div class="reading-name">Live 1-on-1 Session</div>
       <div class="reading-price">$175</div>
-      <div class="reading-desc">Sit with Samantha live over Zoom and go through your eyes together, in real time. Ask anything. Pick a time from her current availability.</div>
+      <div class="reading-desc">Sit with Samantha live and go through your eyes together, in real time. Ask anything. Pick a time from her current availability.</div>
       <a href="https://api.leadconnectorhq.com/widget/booking/LOIVH1mxp0kgW6KzYgq8" class="track-cta">Book Your Session</a>
     </div>
 
@@ -1247,7 +1291,7 @@ footer {
         <div class="track-price-sub">Pay in full — or 3 monthly payments of $1,166.67 ($3,500 total).</div>
       </div>
       <ul class="track-includes">
-        <li class="highlight">Weekly live Zoom call with Samantha (8 weeks)</li>
+        <li class="highlight">Weekly live video call with Samantha (8 weeks)</li>
         <li>Private member area open at enrollment</li>
         <li>Growing video vault — every session recorded</li>
         <li>Drip-released materials each week</li>
@@ -1324,7 +1368,7 @@ footer {
       <div class="process-num">04</div>
       <div class="process-text">
         <h3>The Cohort Begins</h3>
-        <p>Cohort 1 starts July 13, 2026. The first live call. Drip materials begin. The work begins.</p>
+        <p>The next cohort starts September 1, 2026. The first live call. Drip materials begin. The work begins.</p>
       </div>
     </div>
   </div>
@@ -1339,8 +1383,8 @@ footer {
   </div>
   <div class="faq-wrap">
     <div class="faq-item">
-      <div class="faq-question">When does Cohort 1 start, and what if I miss it? <span class="faq-toggle">+</span></div>
-      <div class="faq-answer">Cohort 1 begins July 13, 2026. Enrollment is open now. If you miss this cohort, the next will open later in 2026 — but capacity is limited and Cohort 1 will fill first. There are only 10 seats.</div>
+      <div class="faq-question">When does the next cohort start, and what if I miss it? <span class="faq-toggle">+</span></div>
+      <div class="faq-answer">The next cohort begins September 1, 2026. Enrollment is open now. If you miss this cohort, the next will open later — but capacity is limited and seats fill first-come. There are only 10 seats.</div>
     </div>
     <div class="faq-item">
       <div class="faq-question">What's the price, and can I pay over time? <span class="faq-toggle">+</span></div>
@@ -1348,7 +1392,7 @@ footer {
     </div>
     <div class="faq-item">
       <div class="faq-question">What's your refund policy? <span class="faq-toggle">+</span></div>
-      <div class="faq-answer">You can request a full refund within 14 days of purchase, or any time before the first call on July 13 — whichever comes first. After the cohort begins, all sales are final. If you're on the payment plan and cancel within the window, any payments already charged are refunded and future payments are stopped.</div>
+      <div class="faq-answer">You can request a full refund within 14 days of purchase, or any time before the first call on September 1 — whichever comes first. After the cohort begins, all sales are final. If you're on the payment plan and cancel within the window, any payments already charged are refunded and future payments are stopped.</div>
     </div>
     <div class="faq-item">
       <div class="faq-question">Do I need to have completed the Foundation Course first? <span class="faq-toggle">+</span></div>
@@ -1364,11 +1408,11 @@ footer {
 <!-- ────── FINAL CTA ────── -->
 <section class="final-cta">
   <div class="final-cta-inner">
-    <div class="final-cta-kicker">COHORT 1 · BEGINS JULY 13, 2026</div>
+    <div class="final-cta-kicker">NEXT COHORT · BEGINS SEPTEMBER 1, 2026</div>
     <h2>Ready to <span class="em">do the work?</span></h2>
     <div class="final-cta-italic">— eight weeks, live, with Samantha. ten seats only.</div>
     <p class="final-cta-sub">
-      Cohort 1 has <strong>only 10 seats.</strong> Enroll with pay-in-full or 3 monthly payments. Your seat is secured the moment you check out — and the cohort starts July 13.
+      The next cohort has <strong>only 10 seats.</strong> Enroll with pay-in-full or 3 monthly payments. Your seat is secured the moment you check out — and the cohort starts September 1.
     </p>
     <div class="cta-buttons">
       <a href="https://link.fastpaydirect.com/payment-link/6a247a0603b17c94f5714ed5" class="btn btn-cream btn-large">Pay in Full — $3,000</a>
@@ -1387,13 +1431,14 @@ footer {
     <div class="footer-col">
       <h4>Connect</h4>
       <a href="#readings">Readings →</a>
+      <a href="https://www.amazon.com/shop/healingeyes" target="_blank" rel="noopener sponsored">Shop on Amazon</a>
       <a href="https://www.tiktok.com/@healingeyesholistics">Reach Samantha on TikTok</a>
       <a href="legal.html">Legal</a>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="copyright">© 2026 Healing Eyes. All Rights Reserved.</div>
-    <div class="disclaimer">Iridology and sclerology are not diagnostic tools and are not a substitute for medical care. Information provided by Healing Eyes is for educational purposes only.</div>
+    <div class="disclaimer">Iridology and sclerology are not diagnostic tools and are not a substitute for medical care. Information provided by Healing Eyes is for educational purposes only. As an Amazon Associate, Healing Eyes earns from qualifying purchases.</div>
   </div>
 </footer>
 
