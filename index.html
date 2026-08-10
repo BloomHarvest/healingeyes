@@ -274,6 +274,130 @@ nav {
   max-width: 1100px;
   margin: 0 auto;
 }
+
+/* ─────── WORKSHOP FEATURE BANNER ─────── */
+.workshop-feature {
+  background: var(--cream);
+  padding: 32px 5% 8px;
+}
+.workshop-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--navy-deep);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.workshop-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top, rgba(184,147,90,0.22), transparent 65%);
+  pointer-events: none;
+}
+.workshop-inner { position: relative; z-index: 1; }
+.workshop-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.22em;
+  font-size: 12px;
+  padding: 7px 18px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+.workshop-badge::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--navy);
+  animation: pulse 2s infinite;
+}
+.workshop-card h2 {
+  font-family: 'Bebas Neue';
+  font-size: clamp(34px, 8vw, 52px);
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.workshop-card h2 .em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+  text-transform: lowercase;
+}
+.workshop-dates {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+}
+.workshop-price {
+  font-family: 'Bebas Neue';
+  font-size: 52px;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.workshop-price .was {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: rgba(254,250,241,0.5);
+  text-decoration: line-through;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.workshop-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(254,250,241,0.88);
+  max-width: 620px;
+  margin: 16px auto 12px;
+  font-weight: 300;
+}
+.workshop-bonus {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--gold-light);
+  margin-bottom: 26px;
+}
+.workshop-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 40px;
+  background: var(--gold);
+  color: var(--navy);
+  text-decoration: none;
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.2em;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.workshop-cta::after { content: "\2192"; font-family: 'Inter'; transition: transform 0.3s; }
+.workshop-cta:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(184,147,90,0.35); }
+.workshop-cta:hover::after { transform: translateX(5px); }
+.workshop-seats {
+  display: block;
+  margin-top: 14px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: rgba(254,250,241,0.6);
+}
+@media (min-width: 700px) {
+  .workshop-card { padding: 52px 44px; }
+}
 .reading-card {
   background: var(--ivory);
   border: 1px solid var(--navy);
@@ -1185,17 +1309,35 @@ footer {
   <a href="#enroll" class="nav-cta">Enroll</a>
 </nav>
 
+<!-- ────── WORKSHOP FEATURE (temporary — remove after Aug 24) ────── -->
+<section class="workshop-feature">
+  <div class="workshop-card">
+    <div class="workshop-inner">
+      <div class="workshop-badge">Limited Event · 90 Seats</div>
+      <h2>The 2-Day <span class="em">Live</span> Workshop</h2>
+      <div class="workshop-dates">— August 23 &amp; 24 · 6:30 PM CST · live on Google Meet</div>
+      <div class="workshop-price"><span class="was">$150</span>$97</div>
+      <p class="workshop-desc">
+        Two evenings, live with Samantha — learn to read eyes from the ground up. Eye color, fiber patterns, and the markers that tell a story. No experience needed. Drawing on five years of practice and thousands of readings for people around the world.
+      </p>
+      <div class="workshop-bonus">Everyone who attends unlocks an exclusive bonus — revealed live on Day 2.</div>
+      <a href="https://link.fastpaydirect.com/payment-link/6a7a25b6c8cc9a2ce7267393" class="workshop-cta">Reserve Your Seat</a>
+      <span class="workshop-seats">Only 90 seats. Once they're gone, they're gone.</span>
+    </div>
+  </div>
+</section>
+
 <!-- ────── HERO ────── -->
 <section class="hero" id="top">
   <div class="hero-text">
-    <div class="cohort-banner">NEXT COHORT · BEGINS SEPTEMBER 1, 2026</div>
+    <div class="cohort-banner">NEXT COHORT · BEGINS SEPTEMBER 21, 2026</div>
     <div class="hero-kicker">— THE HEALING EYES ACADEMY</div>
     <h1>
       Learn to Read Eyes<br>at Depth.
       <span class="accent">— eight weeks. live. real work.</span>
     </h1>
     <p class="hero-body">
-      The complete iridology training. Eight weeks of live weekly sessions with Samantha, a physical book and welcome package mailed to you, drip-released materials each week, and direct access throughout the cohort. The next cohort begins September 1, 2026.
+      The complete iridology training. Eight weeks of live weekly sessions with Samantha, a physical book and welcome package mailed to you, drip-released materials each week, and direct access throughout the cohort. The next cohort begins September 21, 2026.
     </p>
     <a href="#enroll" class="btn">Enroll Now</a>
     <a href="#readings" class="hero-secondary-link">— or get a reading first ↓</a>
@@ -1378,7 +1520,7 @@ footer {
       <div class="process-num">04</div>
       <div class="process-text">
         <h3>The Cohort Begins</h3>
-        <p>The next cohort starts September 1, 2026. The first live call. Drip materials begin. The work begins.</p>
+        <p>The next cohort starts September 21, 2026. The first live call. Drip materials begin. The work begins.</p>
       </div>
     </div>
   </div>
@@ -1394,7 +1536,7 @@ footer {
   <div class="faq-wrap">
     <div class="faq-item">
       <div class="faq-question">When does the next cohort start, and what if I miss it? <span class="faq-toggle">+</span></div>
-      <div class="faq-answer">The next cohort begins September 1, 2026. Enrollment is open now. If you miss this cohort, the next will open later — but capacity is limited and seats fill first-come. There are only 10 seats.</div>
+      <div class="faq-answer">The next cohort begins September 21, 2026. Enrollment is open now. If you miss this cohort, the next will open later — but capacity is limited and seats fill first-come. There are only 10 seats.</div>
     </div>
     <div class="faq-item">
       <div class="faq-question">What's the price, and can I pay over time? <span class="faq-toggle">+</span></div>
@@ -1402,7 +1544,7 @@ footer {
     </div>
     <div class="faq-item">
       <div class="faq-question">What's your refund policy? <span class="faq-toggle">+</span></div>
-      <div class="faq-answer">You can request a full refund within 14 days of purchase, or any time before the first call on September 1 — whichever comes first. After the cohort begins, all sales are final. If you're on the payment plan and cancel within the window, any payments already charged are refunded and future payments are stopped.</div>
+      <div class="faq-answer">You can request a full refund within 14 days of purchase, or any time before the first call on September 21 — whichever comes first. After the cohort begins, all sales are final. If you're on the payment plan and cancel within the window, any payments already charged are refunded and future payments are stopped.</div>
     </div>
     <div class="faq-item">
       <div class="faq-question">Do I need to have completed the Foundation Course first? <span class="faq-toggle">+</span></div>
@@ -1418,11 +1560,11 @@ footer {
 <!-- ────── FINAL CTA ────── -->
 <section class="final-cta">
   <div class="final-cta-inner">
-    <div class="final-cta-kicker">NEXT COHORT · BEGINS SEPTEMBER 1, 2026</div>
+    <div class="final-cta-kicker">NEXT COHORT · BEGINS SEPTEMBER 21, 2026</div>
     <h2>Ready to <span class="em">do the work?</span></h2>
     <div class="final-cta-italic">— eight weeks, live, with Samantha. ten seats only.</div>
     <p class="final-cta-sub">
-      The next cohort has <strong>only 10 seats.</strong> Enroll with pay-in-full or 3 monthly payments. Your seat is secured the moment you check out — and the cohort starts September 1.
+      The next cohort has <strong>only 10 seats.</strong> Enroll with pay-in-full or 3 monthly payments. Your seat is secured the moment you check out — and the cohort starts September 21.
     </p>
     <div class="cta-buttons">
       <a href="https://link.fastpaydirect.com/payment-link/6a247a0603b17c94f5714ed5" class="btn btn-cream btn-large">Pay in Full — $3,000</a>
