@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Healing Eyes Academy — Iridology Training</title>
+<title>The Healing Eyes Academy | Iridology Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -274,6 +274,46 @@ nav {
   max-width: 1100px;
   margin: 0 auto;
 }
+
+/* ─────── COHORT TEASER BAR (sits above workshop card) ─────── */
+.cohort-teaser {
+  background: var(--cream);
+  padding: 18px 5% 0;
+}
+.cohort-teaser-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--ivory);
+  border: 1px solid rgba(26,43,92,0.15);
+  border-radius: 6px;
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+.cohort-teaser-text {
+  font-size: 12.5px;
+  color: var(--charcoal);
+  letter-spacing: 0.01em;
+}
+.cohort-teaser-text b { color: var(--navy); }
+.cohort-teaser-btn {
+  display: inline-block;
+  padding: 7px 16px;
+  background: var(--navy);
+  color: var(--cream);
+  text-decoration: none;
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.15em;
+  font-size: 11px;
+  border-radius: 3px;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+.cohort-teaser-btn:hover { background: var(--navy-deep); }
 
 /* ─────── WORKSHOP FEATURE BANNER ─────── */
 .workshop-feature {
@@ -1310,18 +1350,26 @@ footer {
   <a href="#enroll" class="nav-cta">Enroll</a>
 </nav>
 
+<!-- ────── COHORT TEASER (sits above workshop) ────── -->
+<div class="cohort-teaser">
+  <div class="cohort-teaser-inner">
+    <span class="cohort-teaser-text">👁 <b>Next Academy Cohort begins October 5, 2026.</b> Or start with the workshop below.</span>
+    <a href="#enroll" class="cohort-teaser-btn">Learn More</a>
+  </div>
+</div>
+
 <!-- ────── WORKSHOP FEATURE (temporary — remove after Sept 21) ────── -->
 <section class="workshop-feature">
   <div class="workshop-card">
     <div class="workshop-inner">
       <div class="workshop-badge">Limited Event · 30 Seats</div>
       <h2>The 2-Day <span class="em">Live</span> Workshop</h2>
-      <div class="workshop-dates">— September 20 &amp; 21 · 6:30 PM CST · live on Google Meet</div>
+      <div class="workshop-dates">September 20 &amp; 21 · 6:30 PM CST · live on Google Meet</div>
       <div class="workshop-price"><span class="was">$150</span>$97</div>
       <p class="workshop-desc">
-        Two evenings, live with Samantha — learn to read eyes from the ground up. Eye color, fiber patterns, and the markers that tell a story. No experience needed. Drawing on five years of practice and thousands of readings for people around the world.
+        Two evenings, live with Samantha. Learn to read eyes from the ground up: eye color, fiber patterns, and the markers that tell a story. No experience needed. Drawing on five years of practice and thousands of readings for people around the world.
       </p>
-      <div class="workshop-bonus">Everyone who attends unlocks an exclusive bonus — revealed live on Day 2.</div>
+      <div class="workshop-bonus">Everyone who attends unlocks an exclusive bonus, revealed live on Day 2.</div>
       <a href="https://link.fastpaydirect.com/payment-link/6a96d04bd6768df05444916e" class="workshop-cta">Reserve Your Seat</a>
       <span class="workshop-seats">Only 30 seats. Once they're gone, they're gone.</span>
     </div>
@@ -1332,16 +1380,16 @@ footer {
 <section class="hero" id="top">
   <div class="hero-text">
     <div class="cohort-banner">NEXT COHORT · BEGINS OCTOBER 5, 2026</div>
-    <div class="hero-kicker">— THE HEALING EYES ACADEMY</div>
+    <div class="hero-kicker">THE HEALING EYES ACADEMY</div>
     <h1>
       Learn to Read Eyes<br>at Depth.
-      <span class="accent">— eight weeks. live. real work.</span>
+      <span class="accent">eight weeks. live. real work.</span>
     </h1>
     <p class="hero-body">
       The complete iridology training. Eight weeks of live weekly sessions with Samantha, a physical book and welcome package mailed to you, drip-released materials each week, and direct access throughout the cohort. The next cohort begins October 5, 2026.
     </p>
     <a href="#enroll" class="btn">Enroll Now</a>
-    <a href="#readings" class="hero-secondary-link">— or get a reading first ↓</a>
+    <a href="#readings" class="hero-secondary-link">Or get a reading first ↓</a>
   </div>
   <div>
     <div class="hero-image-wrap">
@@ -1353,9 +1401,9 @@ footer {
 <!-- ────── THE READINGS ────── -->
 <section class="readings" id="readings">
   <div class="section-header">
-    <div class="section-kicker">— Real Eyes, Real Readings</div>
+    <div class="section-kicker">Real Eyes, Real Readings</div>
     <h2>Start with <span class="em">your</span> eyes.</h2>
-    <p>Have Samantha read what your eyes have been saying — personally, by hand.</p>
+    <p>Have Samantha read what your eyes have been saying, personally, by hand.</p>
   </div>
   <p class="who-intro">
     Three ways to work with Samantha directly, from a quick written snapshot to an hour together, live. Every reading draws on five years of practice and thousands of readings for people around the world.
@@ -1376,7 +1424,7 @@ footer {
       <div class="reading-tier">DEEP PERSONAL READING</div>
       <div class="reading-name">Personalized Video Report</div>
       <div class="reading-price"><span class="was">$200</span>$150</div>
-      <div class="reading-desc">Samantha records a full video walking through your iris in detail — color, fibers, markers, and what they reveal — so you can watch it back as many times as you need.</div>
+      <div class="reading-desc">Samantha records a full video walking through your iris in detail: color, fibers, markers, and what they reveal. Watch it back as many times as you need.</div>
       <a href="https://link.fastpaydirect.com/payment-link/6a3ed133390a6e280643ad61" class="track-cta">Book Your Report</a>
     </div>
 
@@ -1392,19 +1440,19 @@ footer {
   </div>
   <div class="readings-bridge">
     <span class="em">Want to read eyes yourself?</span>
-    <p>Keep scrolling — the Healing Eyes Academy is where you learn the craft. ↓</p>
+    <p>Keep scrolling. The Healing Eyes Academy is where you learn the craft. ↓</p>
   </div>
 </section>
 
 <!-- ────── WHO THIS IS FOR ────── -->
 <section class="who">
   <div class="section-header">
-    <div class="section-kicker">— Who This Is For</div>
+    <div class="section-kicker">Who This Is For</div>
     <h2>Built for <span class="em">serious</span> students.</h2>
     <p>This isn't a casual course. It's an iridology training.</p>
   </div>
   <p class="who-intro">
-    The Academy isn't for the casually curious. It's for people who want to do this work — read eyes, support clients, build a practice. This is for you if any of these sound like you:
+    The Academy isn't for the casually curious. It's for people who want to do this work: read eyes, support clients, build a practice. This is for you if any of these sound like you:
   </p>
   <div class="who-cards">
     <div class="who-card">
@@ -1428,7 +1476,7 @@ footer {
 <!-- ────── THE OFFER ────── -->
 <section class="tracks" id="enroll">
   <div class="section-header">
-    <div class="section-kicker">— The Cohort</div>
+    <div class="section-kicker">The Cohort</div>
     <h2>One Cohort.<br><span class="em">one</span> methodology.</h2>
     <p>Eight weeks, live, with Samantha. Ten seats only.</p>
   </div>
@@ -1441,18 +1489,18 @@ footer {
       <div class="track-tagline">Eight weeks. Live. Community + weekly access to Samantha.</div>
       <div class="track-price-block">
         <div class="track-price">$3,000</div>
-        <div class="track-price-sub">Pay in full — or 3 monthly payments of $1,166.67 ($3,500 total).</div>
+        <div class="track-price-sub">Pay in full, or 3 monthly payments of $1,166.67 ($3,500 total).</div>
       </div>
       <ul class="track-includes">
         <li class="highlight">Weekly live video call with Samantha (8 weeks)</li>
         <li>Private member area open at enrollment</li>
-        <li>Growing video vault — every session recorded</li>
+        <li>Growing video vault, every session recorded</li>
         <li>Drip-released materials each week</li>
         <li>Group chat with Samantha and your cohort</li>
         <li>Physical book + welcome package mailed</li>
         <li>Direct access to Samantha throughout</li>
       </ul>
-      <a href="https://link.fastpaydirect.com/payment-link/6a247a0603b17c94f5714ed5" class="track-cta">Pay in Full — $3,000</a>
+      <a href="https://link.fastpaydirect.com/payment-link/6a247a0603b17c94f5714ed5" class="track-cta">Pay in Full: $3,000</a>
       <a href="https://link.fastpaydirect.com/payment-link/6a2487ef71a0aa761e463603" class="track-cta-secondary">Or 3 Payments of $1,166.67</a>
     </div>
 
@@ -1465,14 +1513,14 @@ footer {
   <div class="different-overlay"></div>
   <div class="different-content">
     <div class="different-header">
-      <div class="different-kicker">— what makes this different</div>
+      <div class="different-kicker">what makes this different</div>
       <h2>This is not <span class="em">another iridology</span> course.</h2>
     </div>
     <div class="diff-points">
       <div class="diff-point">
         <div class="diff-point-num">01.</div>
         <h3>Sclerology Integrated</h3>
-        <p>Most iridology programs ignore sclerology entirely. The Academy teaches you to read the iris AND the sclera together — Samantha's actual methodology.</p>
+        <p>Most iridology programs ignore sclerology entirely. The Academy teaches you to read the iris AND the sclera together, Samantha's actual methodology.</p>
       </div>
       <div class="diff-point">
         <div class="diff-point-num">02.</div>
@@ -1482,7 +1530,7 @@ footer {
       <div class="diff-point">
         <div class="diff-point-num">03.</div>
         <h3>Build Your Own Methodology</h3>
-        <p>Samantha doesn't want clones. The Academy teaches you the principles so you can develop your own approach — the way she developed hers.</p>
+        <p>Samantha doesn't want clones. The Academy teaches you the principles so you can develop your own approach, the way she developed hers.</p>
       </div>
     </div>
   </div>
@@ -1491,7 +1539,7 @@ footer {
 <!-- ────── WHEN YOU ENROLL ────── -->
 <section class="process">
   <div class="section-header">
-    <div class="section-kicker">— What Happens Next</div>
+    <div class="section-kicker">What Happens Next</div>
     <h2>When you <span class="em">enroll.</span></h2>
     <p>Four steps. No application. Your seat is secured the moment you check out.</p>
   </div>
@@ -1500,7 +1548,7 @@ footer {
       <div class="process-num">01</div>
       <div class="process-text">
         <h3>You Enroll</h3>
-        <p>Pick pay-in-full or the 3-payment plan at checkout. Your seat is secured the moment payment goes through — no application, no waiting.</p>
+        <p>Pick pay-in-full or the 3-payment plan at checkout. Your seat is secured the moment payment goes through. No application, no waiting.</p>
       </div>
     </div>
     <div class="process-step">
@@ -1514,7 +1562,7 @@ footer {
       <div class="process-num">03</div>
       <div class="process-text">
         <h3>Your Package Ships</h3>
-        <p>Samantha collects your mailing address and sends your physical book and welcome package — it reaches you before week one.</p>
+        <p>Samantha collects your mailing address and sends your physical book and welcome package. It reaches you before week one.</p>
       </div>
     </div>
     <div class="process-step">
@@ -1530,14 +1578,14 @@ footer {
 <!-- ────── FAQ ────── -->
 <section class="faq">
   <div class="section-header">
-    <div class="section-kicker">— Real Questions, Real Answers</div>
+    <div class="section-kicker">Real Questions, Real Answers</div>
     <h2>Before You Enroll</h2>
     <p>Everything you'd want to ask before committing to the Academy.</p>
   </div>
   <div class="faq-wrap">
     <div class="faq-item">
       <div class="faq-question">When does the next cohort start, and what if I miss it? <span class="faq-toggle">+</span></div>
-      <div class="faq-answer">The next cohort begins October 5, 2026. Enrollment is open now. If you miss this cohort, the next will open later — but capacity is limited and seats fill first-come. There are only 10 seats.</div>
+      <div class="faq-answer">The next cohort begins October 5, 2026. Enrollment is open now. If you miss this cohort, the next will open later, but capacity is limited and seats fill first-come. There are only 10 seats.</div>
     </div>
     <div class="faq-item">
       <div class="faq-question">What's the price, and can I pay over time? <span class="faq-toggle">+</span></div>
@@ -1545,7 +1593,7 @@ footer {
     </div>
     <div class="faq-item">
       <div class="faq-question">What's your refund policy? <span class="faq-toggle">+</span></div>
-      <div class="faq-answer">You can request a full refund within 14 days of purchase, or any time before the first call on October 5 — whichever comes first. After the cohort begins, all sales are final. If you're on the payment plan and cancel within the window, any payments already charged are refunded and future payments are stopped.</div>
+      <div class="faq-answer">You can request a full refund within 14 days of purchase, or any time before the first call on October 5, whichever comes first. After the cohort begins, all sales are final. If you're on the payment plan and cancel within the window, any payments already charged are refunded and future payments are stopped.</div>
     </div>
     <div class="faq-item">
       <div class="faq-question">Do I need to have completed the Foundation Course first? <span class="faq-toggle">+</span></div>
@@ -1553,7 +1601,7 @@ footer {
     </div>
     <div class="faq-item">
       <div class="faq-question">What if I can't make a weekly call? <span class="faq-toggle">+</span></div>
-      <div class="faq-answer">Every live session is recorded into your private video vault the same day — if you miss one, the replay is waiting for you there. The vault keeps growing through the full eight weeks, so you'll never lose anything.</div>
+      <div class="faq-answer">Every live session is recorded into your private video vault the same day. If you miss one, the replay is waiting for you there. The vault keeps growing through the full eight weeks, so you'll never lose anything.</div>
     </div>
   </div>
 </section>
@@ -1563,12 +1611,12 @@ footer {
   <div class="final-cta-inner">
     <div class="final-cta-kicker">NEXT COHORT · BEGINS OCTOBER 5, 2026</div>
     <h2>Ready to <span class="em">do the work?</span></h2>
-    <div class="final-cta-italic">— eight weeks, live, with Samantha. ten seats only.</div>
+    <div class="final-cta-italic">eight weeks, live, with Samantha. ten seats only.</div>
     <p class="final-cta-sub">
-      The next cohort has <strong>only 10 seats.</strong> Enroll with pay-in-full or 3 monthly payments. Your seat is secured the moment you check out — and the cohort starts October 5.
+      The next cohort has <strong>only 10 seats.</strong> Enroll with pay-in-full or 3 monthly payments. Your seat is secured the moment you check out, and the cohort starts October 5.
     </p>
     <div class="cta-buttons">
-      <a href="https://link.fastpaydirect.com/payment-link/6a247a0603b17c94f5714ed5" class="btn btn-cream btn-large">Pay in Full — $3,000</a>
+      <a href="https://link.fastpaydirect.com/payment-link/6a247a0603b17c94f5714ed5" class="btn btn-cream btn-large">Pay in Full: $3,000</a>
       <a href="https://link.fastpaydirect.com/payment-link/6a2487ef71a0aa761e463603" class="btn btn-outline btn-large">3 Payments of $1,166.67</a>
     </div>
   </div>
