@@ -275,7 +275,7 @@ nav {
   margin: 0 auto;
 }
 
-/* ─────── COHORT TEASER BAR (sits above workshop card) ─────── */
+/* ─────── COHORT TEASER BAR ─────── */
 .cohort-teaser {
   background: var(--cream);
   padding: 18px 5% 0;
@@ -314,130 +314,6 @@ nav {
   transition: background 0.3s;
 }
 .cohort-teaser-btn:hover { background: var(--navy-deep); }
-
-/* ─────── WORKSHOP FEATURE BANNER ─────── */
-.workshop-feature {
-  background: var(--cream);
-  padding: 32px 5% 8px;
-}
-.workshop-card {
-  max-width: 1000px;
-  margin: 0 auto;
-  background: var(--navy-deep);
-  border: 1px solid var(--gold);
-  border-radius: 8px;
-  padding: 40px 32px;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-.workshop-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at top, rgba(184,147,90,0.22), transparent 65%);
-  pointer-events: none;
-}
-.workshop-inner { position: relative; z-index: 1; }
-.workshop-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--gold);
-  color: var(--navy);
-  font-family: 'Bebas Neue';
-  letter-spacing: 0.22em;
-  font-size: 12px;
-  padding: 7px 18px;
-  border-radius: 3px;
-  margin-bottom: 20px;
-}
-.workshop-badge::before {
-  content: "";
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--navy);
-  animation: pulse 2s infinite;
-}
-.workshop-card h2 {
-  font-family: 'Bebas Neue';
-  font-size: clamp(34px, 8vw, 52px);
-  color: var(--cream);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.workshop-card h2 .em {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--gold-light);
-  text-transform: lowercase;
-}
-.workshop-dates {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 18px;
-  color: var(--gold-light);
-  margin-bottom: 20px;
-}
-.workshop-price {
-  font-family: 'Bebas Neue';
-  font-size: 52px;
-  color: var(--cream);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.workshop-price .was {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 24px;
-  color: rgba(254,250,241,0.5);
-  text-decoration: line-through;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-.workshop-desc {
-  font-size: 15px;
-  line-height: 1.7;
-  color: rgba(254,250,241,0.88);
-  max-width: 620px;
-  margin: 16px auto 12px;
-  font-weight: 300;
-}
-.workshop-bonus {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 16px;
-  color: var(--gold-light);
-  margin-bottom: 26px;
-}
-.workshop-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 18px 40px;
-  background: var(--gold);
-  color: var(--navy);
-  text-decoration: none;
-  font-family: 'Bebas Neue';
-  letter-spacing: 0.2em;
-  font-size: 16px;
-  border-radius: 4px;
-  transition: all 0.3s;
-}
-.workshop-cta::after { content: "\2192"; font-family: 'Inter'; transition: transform 0.3s; }
-.workshop-cta:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(184,147,90,0.35); }
-.workshop-cta:hover::after { transform: translateX(5px); }
-.workshop-seats {
-  display: block;
-  margin-top: 14px;
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  color: rgba(254,250,241,0.6);
-}
-@media (min-width: 700px) {
-  .workshop-card { padding: 52px 44px; }
-}
 
 .reading-card {
   background: var(--ivory);
@@ -1350,31 +1226,13 @@ footer {
   <a href="#enroll" class="nav-cta">Enroll</a>
 </nav>
 
-<!-- ────── COHORT TEASER (sits above workshop) ────── -->
+<!-- ────── COHORT TEASER ────── -->
 <div class="cohort-teaser">
   <div class="cohort-teaser-inner">
-    <span class="cohort-teaser-text">👁 <b>Next Academy Cohort begins October 5, 2026.</b> Or start with the workshop below.</span>
+    <span class="cohort-teaser-text">👁 <b>Next Academy Cohort begins October 5, 2026.</b> Enroll now to reserve your seat.</span>
     <a href="#enroll" class="cohort-teaser-btn">Learn More</a>
   </div>
 </div>
-
-<!-- ────── WORKSHOP FEATURE (temporary — remove after Sept 21) ────── -->
-<section class="workshop-feature">
-  <div class="workshop-card">
-    <div class="workshop-inner">
-      <div class="workshop-badge">Limited Event · 30 Seats</div>
-      <h2>The 2-Day <span class="em">Live</span> Workshop</h2>
-      <div class="workshop-dates">September 20 &amp; 21 · 6:30 PM CST · live on Google Meet</div>
-      <div class="workshop-price"><span class="was">$150</span>$97</div>
-      <p class="workshop-desc">
-        Two evenings, live with Samantha. Learn to read eyes from the ground up: eye color, fiber patterns, and the markers that tell a story. No experience needed. Drawing on five years of practice and thousands of readings for people around the world.
-      </p>
-      <div class="workshop-bonus">Everyone who attends unlocks an exclusive bonus, revealed live on Day 2.</div>
-      <a href="https://link.fastpaydirect.com/payment-link/6a96d04bd6768df05444916e" class="workshop-cta">Reserve Your Seat</a>
-      <span class="workshop-seats">Only 30 seats. Once they're gone, they're gone.</span>
-    </div>
-  </div>
-</section>
 
 <!-- ────── HERO ────── -->
 <section class="hero" id="top">
