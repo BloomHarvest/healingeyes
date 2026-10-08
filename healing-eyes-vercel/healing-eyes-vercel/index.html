@@ -396,21 +396,62 @@ nav {
 .reading-card.featured .reading-desc { color: rgba(254, 250, 241, 0.9); }
 .reading-card.featured .track-cta { background: var(--gold); color: var(--navy); }
 .reading-card.featured .track-cta:hover { background: var(--cream); }
-.readings-bridge {
+.academy-strip {
+  max-width: 1000px;
+  margin: 64px auto 0;
+  background: var(--navy-deep);
+  border-radius: 8px;
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
   text-align: center;
-  max-width: 720px;
-  margin: 56px auto 0;
-  padding-top: 36px;
-  border-top: 1px solid rgba(26, 43, 92, 0.12);
+  box-shadow: 0 0 0 1px var(--gold), 0 14px 34px rgba(15, 27, 61, 0.18);
 }
-.readings-bridge .em {
+.academy-strip-kicker {
+  font-family: 'Bebas Neue';
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+}
+.academy-strip-title {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-weight: 400;
-  font-size: 20px;
-  color: var(--rust);
+  font-size: 28px;
+  line-height: 1.15;
+  color: var(--cream);
+  margin-top: 4px;
 }
-.readings-bridge p { font-size: 15px; color: var(--charcoal); margin-top: 6px; }
+.academy-strip-meta {
+  font-size: 14px;
+  color: #C9D2E3;
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+}
+.academy-strip-meta b { color: var(--gold-light); font-weight: 600; }
+.academy-strip-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  text-decoration: none;
+  font-family: 'Bebas Neue';
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  border-radius: 3px;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+.academy-strip-btn:hover { background: var(--gold-light); }
+@media (min-width: 760px) {
+  .academy-strip {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 30px 40px;
+  }
+}
 
 /* ─────── WHO THIS IS FOR ─────── */
 .who {
@@ -1229,6 +1270,7 @@ footer {
 <!-- ────── THE READINGS (leads the page) ────── -->
 <section class="readings" id="top">
   <div class="section-header">
+    <a href="#enroll" class="cohort-banner" style="text-decoration:none">NEXT COHORT · BEGINS OCTOBER 30, 2026 · ENROLLMENT CLOSES OCT 23</a>
     <div class="section-kicker">Real Eyes, Real Readings</div>
     <h2>Start with <span class="em">your</span> eyes.</h2>
     <p>Have Samantha read what your eyes have been saying, personally, by hand.</p>
@@ -1266,31 +1308,28 @@ footer {
     </div>
 
   </div>
-  <div class="readings-bridge">
-    <span class="em">Want to read eyes yourself?</span>
-    <p>Keep scrolling. The Healing Eyes Academy is where you learn the craft. ↓</p>
+  <!-- ACADEMY STRIP -->
+  <div class="academy-strip">
+    <div>
+      <div class="academy-strip-kicker">The Healing Eyes Academy</div>
+      <div class="academy-strip-title">Want to read eyes yourself?</div>
+      <div class="academy-strip-meta">Starts <b>Oct 30</b> · Enrollment closes <b>Oct 23</b> · Only 10 seats</div>
+    </div>
+    <a href="#enroll" class="academy-strip-btn">Enroll Now</a>
   </div>
 </section>
-
-<!-- ────── COHORT TEASER ────── -->
-<div class="cohort-teaser">
-  <div class="cohort-teaser-inner">
-    <span class="cohort-teaser-text">👁 <b>Next Academy Cohort begins October 5, 2026.</b> Enroll now to reserve your seat.</span>
-    <a href="#enroll" class="cohort-teaser-btn">Learn More</a>
-  </div>
-</div>
 
 <!-- ────── ACADEMY ────── -->
 <section class="hero">
   <div class="hero-text">
-    <div class="cohort-banner">NEXT COHORT · BEGINS OCTOBER 5, 2026</div>
+    <div class="cohort-banner">NEXT COHORT · BEGINS OCTOBER 30, 2026 · ENROLLMENT CLOSES OCT 23</div>
     <div class="hero-kicker">THE HEALING EYES ACADEMY</div>
     <h1>
       Learn to Read Eyes<br>at Depth.
       <span class="accent">eight weeks. live. real work.</span>
     </h1>
     <p class="hero-body">
-      The complete iridology training. Eight weeks of live weekly sessions with Samantha, a physical book and welcome package mailed to you, drip-released materials each week, and direct access throughout the cohort. The next cohort begins October 5, 2026.
+      The complete iridology training. Eight weeks of live weekly sessions with Samantha, a physical book and welcome package mailed to you, drip-released materials each week, and direct access throughout the cohort. The next cohort begins October 30, 2026. Enrollment closes October 23.
     </p>
     <a href="#enroll" class="btn">Enroll Now</a>
   </div>
@@ -1426,7 +1465,7 @@ footer {
       <div class="process-num">04</div>
       <div class="process-text">
         <h3>The Cohort Begins</h3>
-        <p>The next cohort starts October 5, 2026. The first live call. Drip materials begin. The work begins.</p>
+        <p>The next cohort starts October 30, 2026. The first live call. Drip materials begin. The work begins.</p>
       </div>
     </div>
   </div>
@@ -1442,7 +1481,7 @@ footer {
   <div class="faq-wrap">
     <div class="faq-item">
       <div class="faq-question">When does the next cohort start, and what if I miss it? <span class="faq-toggle">+</span></div>
-      <div class="faq-answer">The next cohort begins October 5, 2026. Enrollment is open now. If you miss this cohort, the next will open later, but capacity is limited and seats fill first-come. There are only 10 seats.</div>
+      <div class="faq-answer">The next cohort begins October 30, 2026. Enrollment is open now and closes October 23. If you miss this cohort, the next will open later, but capacity is limited and seats fill first-come. There are only 10 seats.</div>
     </div>
     <div class="faq-item">
       <div class="faq-question">What's the price, and can I pay over time? <span class="faq-toggle">+</span></div>
@@ -1450,7 +1489,7 @@ footer {
     </div>
     <div class="faq-item">
       <div class="faq-question">What's your refund policy? <span class="faq-toggle">+</span></div>
-      <div class="faq-answer">You can request a full refund within 14 days of purchase, or any time before the first call on October 5, whichever comes first. After the cohort begins, all sales are final. If you're on the payment plan and cancel within the window, any payments already charged are refunded and future payments are stopped.</div>
+      <div class="faq-answer">You can request a full refund within 14 days of purchase, or any time before the first call on October 30, whichever comes first. After the cohort begins, all sales are final. If you're on the payment plan and cancel within the window, any payments already charged are refunded and future payments are stopped.</div>
     </div>
     <div class="faq-item">
       <div class="faq-question">Do I need to have completed the Foundation Course first? <span class="faq-toggle">+</span></div>
@@ -1466,11 +1505,11 @@ footer {
 <!-- ────── FINAL CTA ────── -->
 <section class="final-cta">
   <div class="final-cta-inner">
-    <div class="final-cta-kicker">NEXT COHORT · BEGINS OCTOBER 5, 2026</div>
+    <div class="final-cta-kicker">NEXT COHORT · BEGINS OCTOBER 30, 2026 · ENROLLMENT CLOSES OCT 23</div>
     <h2>Ready to <span class="em">do the work?</span></h2>
     <div class="final-cta-italic">eight weeks, live, with Samantha. ten seats only.</div>
     <p class="final-cta-sub">
-      The next cohort has <strong>only 10 seats.</strong> Enroll with pay-in-full or 3 monthly payments. Your seat is secured the moment you check out, and the cohort starts October 5.
+      The next cohort has <strong>only 10 seats.</strong> Enroll with pay-in-full or 3 monthly payments. Your seat is secured the moment you check out, and the cohort starts October 30. Enrollment closes October 23.
     </p>
     <div class="cta-buttons">
       <a href="https://link.fastpaydirect.com/payment-link/6a247a0603b17c94f5714ed5" class="btn btn-cream btn-large">Pay in Full: $3,000</a>
