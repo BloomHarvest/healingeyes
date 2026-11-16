@@ -891,6 +891,8 @@ nav {
   transition: all 0.3s;
 }
 .track-cta:hover { background: var(--sage-deep); }
+.track-cta.sold-out { background: #CFC7B6; color: #5E5848; cursor: default; pointer-events: none; }
+.reading-card.is-sold-out .reading-price { opacity: 0.55; }
 
 .track-card.featured .track-cta {
   background: var(--gold);
@@ -1417,12 +1419,12 @@ footer {
     </div>
 
     <!-- PERSONALIZED VIDEO REPORT -->
-    <div class="reading-card">
+    <div class="reading-card is-sold-out">
       <div class="reading-tier">DEEP PERSONAL READING</div>
       <div class="reading-name">Personalized Video Report</div>
       <div class="reading-price"><span class="was">$200</span>$150</div>
       <div class="reading-desc">Samantha records a full video walking through your iris in detail: color, fibers, markers, and what they reveal. Watch it back as many times as you need.</div>
-      <a href="https://link.fastpaydirect.com/payment-link/6a3ed133390a6e280643ad61" class="track-cta">Book Your Report</a>
+      <span class="track-cta sold-out" aria-disabled="true">Sold Out</span>
     </div>
 
     <!-- LIVE 1-ON-1 SESSION -->
